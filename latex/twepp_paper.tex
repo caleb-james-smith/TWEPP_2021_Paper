@@ -8,6 +8,9 @@
 \usepackage{lineno}
 \linenumbers
 
+% TODO: fix command so that there is always space after text
+\newcommand{\vtrx}{VTRx+}
+
 \title{Development of a high bandwidth readout chain for the CMS Phase-2 pixel upgrade}
 
 %% %simple case: multiple authors, same institution
@@ -40,7 +43,7 @@
 \abstract{
 The CMS collaboration is building a new inner tracking pixel detector for the High-Luminosity LHC.
 Each pixel readout chip will be controlled with a single serial input stream at 160 Mbps and will send out data via four CML 1.28 Gbps outputs.
-The readout chips will be grouped in modules and connected with up to 1.6 m long low-mass electrical links to the low power gigabit transceivers (lpGBT) and versatile transceivers (VTRx+) that send the data optically to off-detector electronics at 10 Gbps.
+The readout chips will be grouped in modules and connected with up to 1.6 m long low-mass electrical links to Low-Power GigaBit Transceivers (lpGBT) and Versatile Link Transceivers (\vtrx) modules that send the data optically to off-detector electronics at 10 Gbps.
 The development and the characterization of these components is presented along with system tests of the readout chain.
 }
 
@@ -69,15 +72,37 @@ The development and the characterization of these components is presented along 
 % not use \texttt{\textbackslash emph} or \texttt{\textbackslash it} for
 % latin abbreviaitons: i.e., et al., e.g., vs., etc.
 
-\section{Readout Chain}
+\section{Introduction}
+\label{sec:introduction}
+
+The High-Luminosity LHC (HL-LHC) will provide CMS with a peak instantaneous luminosity of $7.5 \times 10^{34} \mathrm{cm}^{-2} \mathrm{s}^{-1}$ starting in 2027.
+Compared to the LHC, the HL-LHC will have up to 200 proton-proton collisions (pileup) per event and will shower CMS with a higher radiation fluence.
+To prepare for this data taking environment, the CMS Tracker will be fully replaced in the Phase-2 upgrade.
+
+The new inner tracker (the pixel detector) will have about two billion silicon pixels installed.
+The detector will be built using hybrid pixel modules, and the sensor data will be processed by a custom readout chip (ROC) developed by the RD53 collaboration.
+Each frontend readout chip needs a control link to receive trigger, clock, commands, and settings from backend electronics as well as a data links to send pixel data to backend electronics.
+The high bandwidth control and data links are split into two stages: electrical links and optical links.
+System tests of electrical and optical links are presented.
+
+\section{Data Readout Chain}
 \label{sec:readout}
 
-Readout chain section.
+High bandwidth electrical and optical links are used to establish control and data links between pixel modules on the CMS detector and Data Trigger Control (DTC) boards in the counting room.
+Low-mass electronic links (e-links) up to 1.6 meters long provide 160 Mpbs control links (downlinks) and 1.28 Gbps data links (uplinks) between pixel modules and port-cards.
+Optical fibers connect port-cards, which are mounted on the support structure inside the detector, to DTCs in the counting room to establish 2.5 Gbps control links (downlinks) and 10 Gbps data links (uplinks).
+The port-cards are printed circuit boards that each carry three Low-Power GigaBit Transceivers (lpGBT) and three Versatile Link Transceivers (\vtrx) modules.
+The lpGBTs convert optical signals to electrical signals (and vise versa), and the \vtrx modules establish optical links with the DTCs.
 
 \section{Electrical Links}
 \label{sec:electrical}
 
-Electrical links section.
+The prototype low-mass electrical links are being developed and characterized with a series of measurements.
+The signal quality is assessed using eye diagrams to quantify the amplitude and jitter as well as identifying any distortion.
+Cross talk effects over electrical links bundled closely together are also studied.
+As a next step, single ROC cards and pixel modules are read out by electrical links connected to an FPGA board and/or a scope.
+These tests are used to understand the transmission characteristics of the ROC and the flex circuit on the module and how to optimize the transmission parameters of the CML drivers (amplitude, pre-emphasis) of the chip.
+Eye diagrams and bit error rate tests are used to quantify the signal integrity and identify any source of distortion in the electrical part of the readout chain.
 
 \subsection{Crosstalk Measurements}
 
@@ -118,7 +143,7 @@ Thus, external crosstalk from the single aggressor e-link has a small effect on 
 \section{Optical Links}
 \label{sec:optical}
 
-Optical links seciton.
+Dedicated setups with the port-cards reading out single ROC cards with short coaxial cables have been used to test the prototype port-card and validate the optical part of the readout chain.
 
 \begin{figure}[htbp]
 \centering
@@ -148,8 +173,17 @@ Equalization settings affect the timing slightly.
 }
 \end{figure}
 
-% Appendices
+\section{Conclusion}
+\label{sec:conclusion}
 
+The data readout chain is an important part of the CMS Phase-2 pixel upgrade.
+Various system tests have been performed to characterize the electrical and optical links that form the readout chain.
+Electrical links can provide stable links at the required lengths, and crosstalk has a small effect on signal quality.
+Conversion from electrical to optical links is working well, and the optical links have good performance.
+% Current studies demonstrate good performance of electrical and optical links.
+These results will inform the final design, production, and testing of components for the pixel detector readout chain.
+
+% Appendices
 \appendix
 \section{Example appendix title}
 
