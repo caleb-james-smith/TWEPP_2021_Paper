@@ -3,7 +3,7 @@
              % images in pdf, png or jpg format)
 
 \usepackage{jinstpub} % for details on the use of the package, please
-                     % see the JINST-author-manual
+                      % see the JINST-author-manual
 
 \usepackage{lineno}
 \linenumbers
@@ -38,7 +38,10 @@
 \emailAdd{caleb.smith@ku.edu}
 
 \abstract{
-The CMS collaboration is building a new inner tracking pixel detector for the High-Luminosity LHC. Each pixel chip will be controlled with a single serial input stream at 160 Mbps and will send out data via four CML 1.28 Gbps outputs. The modules will be connected with up to 1.6 m long low-mass electrical links to the low power gigabit transceivers (lpGBT) and versatile transceivers (VTRx+) that send the data optically to off-detector electronics at 10 Gbps. The development and the characterization of these components is presented along with system tests of the readout chain.
+The CMS collaboration is building a new inner tracking pixel detector for the High-Luminosity LHC.
+Each pixel readout chip will be controlled with a single serial input stream at 160 Mbps and will send out data via four CML 1.28 Gbps outputs.
+The readout chips will be grouped in modules and connected with up to 1.6 m long low-mass electrical links to the low power gigabit transceivers (lpGBT) and versatile transceivers (VTRx+) that send the data optically to off-detector electronics at 10 Gbps.
+The development and the characterization of these components is presented along with system tests of the readout chain.
 }
 
 \keywords{Only keywords from JINST's keywords list please}
@@ -66,23 +69,84 @@ The CMS collaboration is building a new inner tracking pixel detector for the Hi
 % not use \texttt{\textbackslash emph} or \texttt{\textbackslash it} for
 % latin abbreviaitons: i.e., et al., e.g., vs., etc.
 
-\section{First Section}
-\label{sec:first}
+\section{Readout Chain}
+\label{sec:readout}
 
-Here lies the first section. Put content here.
+Readout chain section.
 
-\section{Second Section}
-\label{sec:second}
+\section{Electrical Links}
+\label{sec:electrical}
 
-Here lies the second section. Put content here.
+Electrical links section.
 
-\paragraph{Paragraphs example}
-Here is an example paragraph. Place text here.
+\subsection{Crosstalk Measurements}
 
-\section{Third Section}
-\label{sec:third}
+Crosstalk measurements section.
 
-Here lies the third section. Put content here.
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.5\textwidth,origin=c]{../figures/fc7_elink_scc_setup.jpg}
+\qquad
+\includegraphics[width=0.4\textwidth,origin=c]{../figures/BERT_TAP0_vs_Length.pdf}
+\caption{
+\label{fig:tap0_vs_length}
+Measurement of signal amplitude (set by TAP0) for electrical links as a function of e-link length for 34 and 36 AWG e-links.
+In the hardware setup (left), an FC7 is connected to an SCC through two commercial DP cables, an adapter board, and an e-link for control and readout communication of an RD53A chip.
+The measurements (right) show the TAP0 setting to achieve a bit error rate of $10^{-11}$ errors per second for e-links of different lengths.
+% For e-links of different lengths, the TAP0 setting to achieve a bit error rate of $10^{-11}$ errors per second is measured (right).
+The necessary signal amplitude increases with e-link length as expected.
+Good performance is seen for e-links up to 2.0 meters.
+}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.5\textwidth,origin=c,angle=270]{../figures/external_crosstalk_setup.jpg}
+\qquad
+\includegraphics[width=0.5\textwidth,origin=c]{../figures/BERT_TAP0_Scan_External_Crosstalk.pdf}
+\caption{
+\label{fig:external_crosstalk}
+Measurement of the effect of external crosstalk on data transmission.
+Two e-links (1.4 meters, 36 AWG) are twisted together (left), with a victim e-link connected between an FC7 and SCC to readout from an RD53A chip, and an aggressor e-link connected to a KC705.
+The KC705 sends PRBS signals on four e-link channels on the aggressor at different amplitudes.
+To mitigate the effect of external crosstalk from a large aggressor amplitude, the victim amplitude set by TAP0 only requires a small increase.
+Thus, external crosstalk from the single aggressor e-link has a small effect on readout over the victim e-link.
+% Thus, the effect of external crosstalk from a single aggressor e-link is small.
+}
+\end{figure}
+
+\section{Optical Links}
+\label{sec:optical}
+
+Optical links seciton.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\textwidth,origin=c]{../figures/lpGBT_eye.pdf}
+\caption{
+\label{fig:lpgbt_eye}
+Eye opening monitor from an lpGBT for the 2.56 Gbps optical down link.
+The plot shows the height of the eye as a function of sampling phase.
+The high-speed input to the lpGBT is compared to a variable (5-bit), fixed voltage by a comparator sampled with a phase interpolated clock.
+Transitions of the comparator are counted; within the eye the output should toggle, above or below no transitions are expected.
+The color scale shows the number of transitions.
+The region with high toggle count corresponds to the eye opening.
+Equalization parameters are at default settings.
+}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=1.0\textwidth,origin=c]{../figures/lpGBT_bert.png}
+\caption{
+\label{fig:lpgbt_bert}
+Scan of bit-error rate vs. clock sampling phase and equalization setting for e-port receivers on the lpGBT driven by the RD53A pixel readout chip over commercial DP cable, adapter and Molex FPC cables.
+The source is a PRBS7 generator in the RD53A read out chip, compared to the internal error checker in the lpGBT.
+Points in green have zero observed errors and report the reciprocal of the number of bits checked.
+The phase at the eye crossing is clearly seen.
+Equalization settings affect the timing slightly.
+}
+\end{figure}
 
 % Appendices
 
@@ -94,9 +158,6 @@ Here is this appendix.
 \acknowledgments
 
 Put acknowledgments here.
-
-\paragraph{Note added.}
-Notes if needed.
 
 % We suggest to always provide author, title and journal data:
 % in short all the informations that clearly identify a document.
