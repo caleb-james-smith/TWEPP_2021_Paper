@@ -8,7 +8,6 @@
 \usepackage{lineno}
 \linenumbers
 
-% TODO: fix command so that there is always space after text
 \newcommand{\vtrx}{VTRx+}
 
 \title{Development of a high bandwidth readout chain for the CMS Phase-2 pixel upgrade}
@@ -79,7 +78,7 @@ The High-Luminosity LHC (HL-LHC) will provide CMS with a peak instantaneous lumi
 Compared to the LHC, the HL-LHC will have up to 200 proton-proton collisions (pileup) per event and will shower CMS with a higher radiation fluence.
 To prepare for this data taking environment, the CMS Tracker will be fully replaced in the Phase-2 upgrade.
 
-The new inner tracker (the pixel detector) will have about two billion silicon pixels installed.
+The new inner tracker will have about two billion silicon pixels installed.
 The detector will be built using hybrid pixel modules, and the sensor data will be processed by a custom readout chip (ROC) developed by the RD53 collaboration.
 Each frontend readout chip needs a control link to receive trigger, clock, commands, and settings from backend electronics as well as a data links to send pixel data to backend electronics.
 The high bandwidth control and data links are split into two stages: electrical links and optical links.
@@ -104,7 +103,51 @@ As a next step, single ROC cards and pixel modules are read out by electrical li
 These tests are used to understand the transmission characteristics of the ROC and the flex circuit on the module and how to optimize the transmission parameters of the CML drivers (amplitude, pre-emphasis) of the chip.
 Eye diagrams and bit error rate tests are used to quantify the signal integrity and identify any source of distortion in the electrical part of the readout chain.
 
-See figure~\ref{fig:tap0_vs_length}.
+% =============
+% E-link design
+% =============
+
+Describe stages in e-link design.
+
+See figure~\ref{fig:elink} for an image of one end of a twisted pair electrical link (e-link).
+Five twisted pair channels (one for a control link and four for data links) are lashed together in a bundle.
+Each twisted pair is soldered to a paddle board, and a nonconductive epoxy is applied to secure the cable ends.
+Each wire has a copper core (127 microns in diameter) and polyamide coating (45 micron thickness), with a total diameter of 217 microns.
+Polyamide braiding is used to lash e-link bundles and provide durability.
+
+Different epoxies were tested: Araldite and UR 6060.
+The final expoy is UR 6060.
+
+Different gauges were tested: 34 and 36 AWG.
+The final gauge is 36 AWG.
+
+Different twists per inch were tested: 3, 4, 6, 8, 16, 24.
+The final twists per inch is 4.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.5\textwidth,origin=c]{../figures/e-link-1.jpg}
+\caption{
+\label{fig:elink}
+One end of a twisted pair electrical link (e-link).
+}
+\end{figure}
+
+% ==============
+% E-link testing
+% ==============
+
+The tests performed on e-links are continuity, visual inspection, mass measurement, DC resistance, differential eye diagram, bit error rate tests (BERT), impedance measurements, cross talk, thermal cycling, and radiation.
+
+% ==================
+% E-link performance
+% ==================
+
+The readout of the RD53A chip across e-links is tested using an FC7, as shown in figure~\ref{fig:tap0_vs_length}.
+E-links of two gauges (34 and 36 AWG) and different lengths (0.35 to 2.0 meters).
+Bit error rates are determined using a pseudorandom bitstream (PRBS).
+TAP0 is the signal amplitude setting.
+Longer e-links require a larger signal amplitude to maintain a given bit error rate.
 
 \begin{figure}[htbp]
 \centering
@@ -122,7 +165,7 @@ Good performance is seen for e-links up to 2.0 meters.
 }
 \end{figure}
 
-\subsection{Crosstalk Measurements}
+% Crosstalk measurements
 
 Crosstalk measurements section.
 
@@ -144,10 +187,34 @@ Thus, external crosstalk from the single aggressor e-link has a small effect on 
 }
 \end{figure}
 
-\section{Optical Links}
+\section{Port cards with Optical Links}
 \label{sec:optical}
 
 Dedicated setups with the port-cards reading out single ROC cards with short coaxial cables have been used to test the prototype port-card and validate the optical part of the readout chain.
+
+See figure~\ref{fig:port_card_design}.
+
+See figure~\ref{fig:port_card_pics}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.5\textwidth,origin=c]{../figures/port_card_design.png}
+\caption{
+\label{fig:port_card_design}
+Port card design.
+}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.45\textwidth,origin=c]{../figures/port_card_front.jpeg}
+\qquad
+\includegraphics[width=0.45\textwidth,origin=c]{../figures/port_card_back.jpeg}
+\caption{
+\label{fig:port_card_pics}
+Port card photos.
+}
+\end{figure}
 
 See figure~\ref{fig:lpgbt_eye}.
 
@@ -155,7 +222,7 @@ See figure~\ref{fig:lpgbt_bert}.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.8\textwidth,origin=c]{../figures/lpGBT_eye.pdf}
+\includegraphics[width=0.5\textwidth,origin=c]{../figures/lpGBT_eye.pdf}
 \caption{
 \label{fig:lpgbt_eye}
 Eye opening monitor from an lpGBT for the 2.56 Gbps optical down link.
@@ -192,14 +259,13 @@ Conversion from electrical to optical links is working well, and the optical lin
 These results will inform the final design, production, and testing of components for the pixel detector readout chain.
 
 % Appendices
-\appendix
-\section{Example appendix title}
-
-Here is this appendix.
+% \appendix
+% \section{Example appendix title}
+% Here is this appendix.
 
 \acknowledgments
 
-Put acknowledgments here.
+The author would like to thank the National Science Foundation for funding this research.
 
 % We suggest to always provide author, title and journal data:
 % in short all the informations that clearly identify a document.
