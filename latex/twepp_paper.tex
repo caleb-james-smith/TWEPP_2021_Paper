@@ -76,10 +76,10 @@ The development and the characterization of these components is presented along 
 
 The High-Luminosity LHC (HL-LHC) will provide CMS with a peak instantaneous luminosity of $7.5 \times 10^{34} \mathrm{cm}^{-2} \mathrm{s}^{-1}$ starting in 2027.
 Compared to the LHC, the HL-LHC will have up to 200 proton-proton collisions (pileup) per event and will shower CMS with a higher radiation fluence.
-To prepare for this data taking environment, the CMS Tracker will be fully replaced in the Phase-2 upgrade.
+To prepare for this data taking environment, the CMS Tracker will be fully replaced in the Phase-2 upgrade~\cite{ref:tdr}.
 
 The new inner tracker will have about two billion silicon pixels installed.
-The detector will be built using hybrid pixel modules, and the sensor data will be processed by a custom readout chip (ROC) developed by the RD53 collaboration.
+The detector will be built using hybrid pixel modules, and the sensor data will be processed by a custom readout chip (ROC) developed by the RD53 collaboration~\cite{ref:rd53}.
 Each frontend readout chip needs a control link to receive trigger, clock, commands, and settings from backend electronics as well as a data links to send pixel data to backend electronics.
 The high bandwidth control and data links are split into two stages: electrical links and optical links.
 System tests of electrical and optical links are presented.
@@ -281,13 +281,43 @@ The author would like to thank the National Science Foundation for funding this 
 
 \begin{thebibliography}{99}
 
-% TODO: Add TDR ref.
-% TODO: Add RD53 ref.
+% TDR Ref.
+%
+% @techreport{CERN-LHCC-2017-009,
+%       title         = "{The Phase-2 Upgrade of the CMS Tracker}",
+%       institution   = "CERN",
+%       collaboration = "CMS Collaboration",
+%       address       = "Geneva",
+%       reportNumber  = "CERN-LHCC-2017-009, CMS-TDR-014",
+%       month         = "Jun",
+%       year          = "2017",
+%       url           = "https://cds.cern.ch/record/2272264",
+% }
 
-\bibitem{a}
-Author, \emph{Example Title},
-arxiv:1234.5678.
+\bibitem{ref:tdr}
+CMS Collaboration, \emph{The Phase-2 Upgrade of the CMS Tracker},
+CERN-LHCC-2017-009, CMS-TDR-014 (2017).
 
+% RD53 Ref.
+%
+% @techreport{Garcia-Sciveres:2287593,
+%       author        = "Garcia-Sciveres, Maurice",
+%       title         = "{The RD53A Integrated Circuit}",
+%       institution   = "CERN",
+%       collaboration = "RD53 Collaboration",
+%       address       = "Geneva",
+%       reportNumber  = "CERN-RD53-PUB-17-001",
+%       month         = "Oct",
+%       year          = "2017",
+%       url           = "https://cds.cern.ch/record/2287593",
+% }
+
+\bibitem{ref:rd53}
+Garcia-Sciveres, Maurice, \emph{The RD53A Integrated Circuit},
+CERN-RD53-PUB-17-001 (2017).
+
+% Examples
+%
 % \bibitem{a}
 % Author, \emph{Title}, \emph{J. Abbrev.} {\bf vol} (year) pg.
 %
