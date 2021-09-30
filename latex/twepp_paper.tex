@@ -96,34 +96,33 @@ The lpGBTs convert optical signals to electrical signals (and vise versa), and t
 \section{Electrical Links}
 \label{sec:electrical}
 
-The prototype low-mass electrical links are being developed and characterized with a series of measurements.
-The signal quality is assessed using eye diagrams to quantify the amplitude and jitter as well as identifying any distortion.
-Cross talk effects over electrical links bundled closely together are also studied.
-As a next step, single ROC cards and pixel modules are read out by electrical links connected to an FPGA board and/or a scope.
-These tests are used to understand the transmission characteristics of the ROC and the flex circuit on the module and how to optimize the transmission parameters of the CML drivers (amplitude, pre-emphasis) of the chip.
-Eye diagrams and bit error rate tests are used to quantify the signal integrity and identify any source of distortion in the electrical part of the readout chain.
-
 % =============
 % E-link design
 % =============
 
-Describe stages in e-link design.
+% Describe e-link design and reasons for design choices.
 
-See figure~\ref{fig:elink} for an image of one end of a twisted pair electrical link (e-link).
-Five twisted pair channels (one for a control link and four for data links) are lashed together in a bundle.
-Each twisted pair is soldered to a paddle board, and a nonconductive epoxy is applied to secure the cable ends.
-Each wire has a copper core (127 microns in diameter) surrounded by an insulator coating (45 micron thickness), with a total diameter of 217 microns.
+% Info
+%
+% Each wire has a 36 AWG copper core (127 microns in diameter) surrounded by a polyimide coating for insolation (45 micron thickness); the total diameter is 217 microns.
+%
+% Polyimide braiding is used to lash twisted pairs in a bundle to provide durability and prevent wire kinks.
+%
+% Different epoxies tested: Araldite 2011 and UR 6060.
+% Final epoxy used: UR 6060.
+%
+% Different gauges tested: 34 and 36 AWG.
+% Final gauge used: 36 AWG.
+%
+% Different twists per inch tested: 3, 4, 6, 8, 16, 24.
+% Final twists per inch used: 4.
 
-Polyamide braiding is used to lash e-link bundles: provides durability and prevents wire kinks.
-
-Different epoxies tested: Araldite 2011 and UR 6060.
-Final expoy used: UR 6060.
-
-Different gauges tested: 34 and 36 AWG.
-Final gauge used: 36 AWG.
-
-Different twists per inch tested: 3, 4, 6, 8, 16, 24.
-Final twists per inch used: 4.
+One end of a twisted pair electrical link (e-link) is shown in figure~\ref{fig:elink}.
+Five twisted pair channels (one for a control link and four for data links) are lashed together in a bundle using a polyimide braiding.
+The lashing provides durability and prevents wire kinks.
+Each twisted pair has two wires that are twisted together with 4 twists per inch.
+On each end of an e-link, wires are soldered to a paddle board, and a nonconductive epoxy (UR 6060) is applied to secure the wires.
+Each wire has a 36 AWG copper core (127 microns in diameter) surrounded by a polyimide coating for insolation (45 micron thickness); the total diameter is 217 microns.
 
 \begin{figure}[htbp]
 \centering
@@ -138,6 +137,17 @@ One end of a twisted pair electrical link (e-link).
 % E-link testing
 % ==============
 
+% TODO: update paragraph
+
+The prototype low-mass electrical links are being developed and characterized with a series of measurements.
+The signal quality is assessed using eye diagrams to quantify the amplitude and jitter as well as identifying any distortion.
+Cross talk effects over electrical links bundled closely together are also studied.
+As a next step, single ROC cards and pixel modules are read out by electrical links connected to an FPGA board and/or a scope.
+These tests are used to understand the transmission characteristics of the ROC and the flex circuit on the module and how to optimize the transmission parameters of the CML drivers (amplitude, pre-emphasis) of the chip.
+Eye diagrams and bit error rate tests are used to quantify the signal integrity and identify any source of distortion in the electrical part of the readout chain.
+
+% TODO: expand description of tests
+
 The tests performed on e-links are continuity, visual inspection, mass measurement, DC resistance, differential eye diagram, bit error rate tests (BERT), impedance measurements, cross talk, thermal cycling, and radiation.
 
 % ==================
@@ -149,6 +159,7 @@ E-links of two gauges (34 and 36 AWG) and different lengths (0.35 to 2.0 meters)
 Bit error rates are determined using a pseudorandom bitstream (PRBS).
 TAP0 is the signal amplitude setting.
 Longer e-links require a larger signal amplitude to maintain a given bit error rate.
+Good performance is seen for e-links up to 2.0 meters.
 
 \begin{figure}[htbp]
 \centering
@@ -161,16 +172,16 @@ Measurement of signal amplitude (set by TAP0) for electrical links as a function
 In the hardware setup (left), an FC7 is connected to an SCC through two commercial DP cables, an adapter board, and an e-link for control and readout communication of an RD53A chip.
 The measurements (right) show the TAP0 setting to achieve a bit error rate of $10^{-11}$ errors per second for e-links of different lengths.
 % For e-links of different lengths, the TAP0 setting to achieve a bit error rate of $10^{-11}$ errors per second is measured (right).
-The necessary signal amplitude increases with e-link length as expected.
-Good performance is seen for e-links up to 2.0 meters.
+% The necessary signal amplitude increases with e-link length as expected.
+% Good performance is seen for e-links up to 2.0 meters.
 }
 \end{figure}
 
 % Crosstalk measurements
 
-Crosstalk measurements section.
-
-See figure~\ref{fig:external_crosstalk}.
+An external crosstalk measurement was performed, and the results are shown in figure~\ref{fig:external_crosstalk}.
+To mitigate the effect of external crosstalk from a large aggressor amplitude, the victim amplitude set by TAP0 only requires a small increase.
+Thus, external crosstalk from the single aggressor e-link has a small effect on readout over the victim e-link.
 
 \begin{figure}[htbp]
 \centering
@@ -182,9 +193,6 @@ See figure~\ref{fig:external_crosstalk}.
 Measurement of the effect of external crosstalk on data transmission.
 Two e-links (1.4 meters, 36 AWG) are twisted together (left), with a victim e-link connected between an FC7 and SCC to readout from an RD53A chip, and an aggressor e-link connected to a KC705.
 The KC705 sends PRBS signals on four e-link channels on the aggressor at different amplitudes.
-To mitigate the effect of external crosstalk from a large aggressor amplitude, the victim amplitude set by TAP0 only requires a small increase.
-Thus, external crosstalk from the single aggressor e-link has a small effect on readout over the victim e-link.
-% Thus, the effect of external crosstalk from a single aggressor e-link is small.
 }
 \end{figure}
 
