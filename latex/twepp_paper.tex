@@ -8,7 +8,7 @@
 \usepackage{lineno}
 \linenumbers
 
-\newcommand{\vtrx}{VTRx+}
+\newcommand{\vtrxp}{VTRx+}
 
 \title{Development of a high bandwidth readout chain for the CMS Phase-2 pixel upgrade}
 
@@ -42,7 +42,7 @@
 \abstract{
 The CMS collaboration is building a new inner tracking pixel detector for the High-Luminosity LHC.
 Each pixel readout chip will be controlled with a single serial input stream at 160 Mbps and will send out data via four CML 1.28 Gbps outputs.
-The readout chips will be grouped in modules and connected with up to 1.6 m long low-mass electrical links to Low-Power GigaBit Transceivers (lpGBT) and Versatile Link Transceivers (\vtrx) modules that send the data optically to off-detector electronics at 10 Gbps.
+The readout chips will be grouped in modules and connected with up to 1.6 m long low-mass electrical links to Low-Power Gigabit Transceivers (lpGBT) and Versatile Link PLUS Transceivers (\vtrxp) modules that send the data optically to off-detector electronics at 10 Gbps.
 The development and the characterization of these components is presented along with system tests of the readout chain.
 }
 
@@ -76,7 +76,7 @@ The development and the characterization of these components is presented along 
 
 The High-Luminosity LHC (HL-LHC) will provide CMS with a peak instantaneous luminosity of $7.5 \times 10^{34} \mathrm{cm}^{-2} \mathrm{s}^{-1}$ starting in 2027.
 Compared to the LHC, the HL-LHC will have up to 200 proton-proton collisions (pileup) per event and will shower CMS with a higher radiation fluence.
-To prepare for this data taking environment, the CMS Tracker will be fully replaced in the Phase-2 upgrade~\cite{ref:tdr}.
+To prepare for this data taking environment, the CMS Tracker will be fully replaced in the Phase-2 upgrade~\cite{ref:tdr,ref:orfanelli}.
 
 The new inner tracker will have about two billion silicon pixels installed.
 The detector will be built using hybrid pixel modules, and the sensor data will be processed by a custom readout chip (ROC) developed by the RD53 collaboration~\cite{ref:rd53}.
@@ -90,8 +90,8 @@ System tests of electrical and optical links are presented.
 High bandwidth electrical and optical links are used to establish control and data links between pixel modules on the CMS detector and Data Trigger Control (DTC) boards in the counting room.
 Low-mass electronic links (e-links) up to 1.6 meters long provide 160 Mpbs control links (downlinks) and 1.28 Gbps data links (uplinks) between pixel modules and port-cards.
 Optical fibers connect port-cards, which are mounted on the support structure inside the detector, to DTCs in the counting room to establish 2.5 Gbps control links (downlinks) and 10 Gbps data links (uplinks).
-The port-cards are printed circuit boards that each carry three Low-Power GigaBit Transceivers (lpGBT) and three Versatile Link Transceivers (\vtrx) modules.
-The lpGBTs convert optical signals to electrical signals (and vise versa), and the \vtrx\space modules establish optical links with the DTCs.
+The port-cards are printed circuit boards that each carry three Low-Power Gigabit Transceivers (lpGBT) and three Versatile Link PLUS Transceivers (\vtrxp) modules~\cite{ref:lpgbt,ref:vtrxp}.
+The lpGBTs convert optical signals to electrical signals (and vise versa), and the \vtrxp\space modules establish optical links with the DTCs.
 
 \section{Electrical Links}
 \label{sec:electrical}
@@ -196,7 +196,7 @@ The KC705 sends PRBS signals on four e-link channels on the aggressor at differe
 }
 \end{figure}
 
-\section{Port cards with Optical Links}
+\section{Portcards with Optical Links}
 \label{sec:optical}
 
 Dedicated setups with the port-cards reading out single ROC cards with short coaxial cables have been used to test the prototype port-card and validate the optical part of the readout chain.
@@ -210,7 +210,7 @@ See figure~\ref{fig:port_card_pics}.
 \includegraphics[width=0.5\textwidth,origin=c]{../figures/port_card_design.png}
 \caption{
 \label{fig:port_card_design}
-Port card design.
+Portcard design.
 }
 \end{figure}
 
@@ -221,7 +221,7 @@ Port card design.
 \includegraphics[width=0.45\textwidth,origin=c]{../figures/port_card_back.jpeg}
 \caption{
 \label{fig:port_card_pics}
-Port card photos.
+Portcard photos.
 }
 \end{figure}
 
@@ -296,7 +296,29 @@ The author would like to thank the National Science Foundation for funding this 
 
 \bibitem{ref:tdr}
 CMS Collaboration, \emph{The Phase-2 Upgrade of the CMS Tracker},
-CERN-LHCC-2017-009, CMS-TDR-014 (2017).
+CERN-LHCC-2017-009 (2017).
+
+% S. Orfanelli Ref.
+%
+% @article{ORFANELLI2020164396,
+% 	abstract = {A new silicon tracker will be built for the Phase 2 Upgrade of the CMS experiment to fully exploit the increased luminosity delivered by the HL-LHC. The innermost part, called the Inner Tracker, will be exposed to extreme conditions such as unprecedented radiation levels of 1.2Grad and 2.3×1016 neq/cm2 and hit rate of 3.2GHz/cm2. The new Inner Tracker relies on many novel solutions and technologies that allow for a design of a light and radiation-hard pixel detector of high performance. The hybrid pixel modules will be composed of pixel sensors with pixel size of 2500μm2 and a new ASIC, designed in 65 nm CMOS technology, developed by the RD53 collaboration. A novel scheme of serial powering will be deployed to power the pixel modules and new technologies will be used for a high bandwidth readout system. The mechanics will be lightweight, based on carbon-fibre material and two-phase CO2 cooling. In this contribution, the design of the CMS Inner Tracker system will be presented along with the prospective design choices.},
+% 	author = {S. Orfanelli},
+% 	doi = {https://doi.org/10.1016/j.nima.2020.164396},
+% 	issn = {0168-9002},
+% 	journal = {Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment},
+% 	keywords = {Silicon detectors, Inner tracker, Readout electronics, Serial powering},
+% 	pages = {164396},
+% 	title = {The Phase 2 Upgrade of the CMS Inner Tracker},
+% 	url = {https://www.sciencedirect.com/science/article/pii/S0168900220307932},
+% 	volume = {980},
+% 	year = {2020},
+% 	Bdsk-Url-1 = {https://www.sciencedirect.com/science/article/pii/S0168900220307932},
+% 	Bdsk-Url-2 = {https://doi.org/10.1016/j.nima.2020.164396}
+% }
+
+\bibitem{ref:orfanelli}
+S. Orfanelli, \emph{The Phase 2 Upgrade of the CMS Inner Tracker},
+Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment (2020).
 
 % RD53 Ref.
 %
@@ -313,8 +335,42 @@ CERN-LHCC-2017-009, CMS-TDR-014 (2017).
 % }
 
 \bibitem{ref:rd53}
-Garcia-Sciveres, Maurice, \emph{The RD53A Integrated Circuit},
+M. Garcia-Sciveres, \emph{The RD53A Integrated Circuit},
 CERN-RD53-PUB-17-001 (2017).
+
+% VTRx+ Ref.
+%
+% @article{So_s_2017,
+% 	abstract = {The Versatile Link PLUS project targets the phase II upgrades of the ATLAS and CMS experiments. It will develop a radiation resistant optical link, operating at up to 10 Gb/s in the upstream and up to 5 Gb/s in the downstream directions with a smaller footprint and higher channel count than its predecessor. A low-profile package is being developed that allows volume production at reduced costs, but which nevertheless can be configured to suit the individual channel count needs of different detectors. This paper describes the development strategies and summarizes the status of the feasibility demonstration phase of the project.},
+% 	author = {C. So{\'{o}}s and S. D{\'{e}}traz and L. Olanter{\"a} and C. Sigaud and J. Troska and F. Vasey and M. Zeiler},
+% 	doi = {10.1088/1748-0221/12/03/c03068},
+% 	journal = {Journal of Instrumentation},
+% 	month = {mar},
+% 	number = {03},
+% 	pages = {C03068--C03068},
+% 	publisher = {{IOP} Publishing},
+% 	title = {Versatile Link {PLUS} transceiver development},
+% 	url = {https://doi.org/10.1088/1748-0221/12/03/c03068},
+% 	volume = {12},
+% 	year = 2017,
+% 	Bdsk-Url-1 = {https://doi.org/10.1088/1748-0221/12/03/c03068}
+% }
+
+\bibitem{ref:vtrxp}
+C. So{\'{o}}s, et al., \emph{Versatile Link {PLUS} transceiver development},
+Proceedings on the Topical Workshop on Electronics for Particle Physics, TWEPP 2016,
+Journal of Instrumentation (2017).
+
+% lpGBT Ref.
+% https://indico.cern.ch/event/799025/contributions/3486153/
+% Title: The lpGBT: a radiation tolerant ASIC for Data, Timing, Trigger and Control Applications in HL-LHC
+% Author: Paulo Moreira
+% Conference: TWEPP
+% Year: 2019
+
+\bibitem{ref:lpgbt}
+P. Moreira, et al., \emph{The lpGBT: A radiation tolerant ASIC for Data, Timing, Trigger and Control Applications in HL-LHC},
+Proceedings on the Topical Workshop on Electronics for Particle Physics, TWEPP 2019.
 
 % Examples
 %
