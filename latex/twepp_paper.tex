@@ -87,20 +87,19 @@ System tests of electrical and optical links are presented.
 \section{Data Readout Chain}
 \label{sec:readout}
 
+An overview of the data readout chain for the inner tracker is shown in figure~\ref{fig:readout}.
 High bandwidth electrical and optical links are used to establish control and data links between pixel modules on the CMS detector and Data Trigger Control (DTC) boards in the counting room.
-Low-mass electronic links (e-links) up to 1.6 meters long provide 160 Mpbs control links (downlinks) and 1.28 Gbps data links (uplinks) between pixel modules and port-cards.
-Optical fibers connect port-cards, which are mounted on the support structure inside the detector, to DTCs in the counting room to establish 2.5 Gbps control links (downlinks) and 10 Gbps data links (uplinks).
-The port-cards are printed circuit boards that each carry three Low-Power Gigabit Transceivers (lpGBT) and three Versatile Link PLUS Transceivers (\vtrxp) modules~\cite{ref:lpgbt,ref:vtrxp}.
+Low-mass electronic links (e-links) up to 1.6 meters long provide 160 Mpbs control links (downlinks) and 1.28 Gbps data links (uplinks) between pixel modules and portcards.
+Optical fibers connect portcards, which are mounted on the support structure inside the detector, to DTCs in the counting room to establish 2.5 Gbps control links (downlinks) and 10 Gbps data links (uplinks).
+The portcards are printed circuit boards that each carry three Low-Power Gigabit Transceivers (lpGBT) and three Versatile Link PLUS Transceivers (\vtrxp) modules~\cite{ref:lpgbt,ref:vtrxp}.
 The lpGBTs convert optical signals to electrical signals (and vise versa), and the \vtrxp\space modules establish optical links with the DTCs.
-
-See figure~\ref{fig:readout}.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=1.0\textwidth,origin=c]{../figures/IT_System_Readout.jpg}
 \caption{
 \label{fig:readout}
-System readout architecture for the inner tracker.
+System readout architecture for the inner tracker. Pixel modules communicate with portcards through e-links. Portcards communicate with DTCs through optical links.
 }
 \end{figure}
 
@@ -148,18 +147,22 @@ One end of a twisted pair electrical link (e-link).
 % E-link testing
 % ==============
 
-% TODO: update paragraph
+% TODO: expand description of tests
+
+% The tests performed on e-links are continuity, visual inspection, mass measurement, DC resistance, differential eye diagram, bit error rate tests (BERT), impedance measurements, cross talk, thermal cycling, and radiation.
 
 The prototype low-mass electrical links are being developed and characterized with a series of measurements.
 The signal quality is assessed using eye diagrams to quantify the amplitude and jitter as well as identifying any distortion.
-Cross talk effects over electrical links bundled closely together are also studied.
-As a next step, single ROC cards and pixel modules are read out by electrical links connected to an FPGA board and/or a scope.
-These tests are used to understand the transmission characteristics of the ROC and the flex circuit on the module and how to optimize the transmission parameters of the CML drivers (amplitude, pre-emphasis) of the chip.
-Eye diagrams and bit error rate tests are used to quantify the signal integrity and identify any source of distortion in the electrical part of the readout chain.
+Bit error rate scans are using to characterize signal integrity across e-links.
+Cross talk effects from channels within an e-link bundle and from multiple bundles is studied.
+The RD53 chip on a Single Chip Card (SCC) is readout over e-links using an FC7.
+Bit error rates are measured using the RD53 chip, and different signal amplitudes for the RD53 are tested to quantify the effect on the error rate.
 
-% TODO: expand description of tests
-
-The tests performed on e-links are continuity, visual inspection, mass measurement, DC resistance, differential eye diagram, bit error rate tests (BERT), impedance measurements, cross talk, thermal cycling, and radiation.
+Radiation testing was performed to determine if e-links can maintain performance in a high radiation environment.
+Two different epoxies, Araldite 2011 and UR 6060, were used for e-links that underwent radiation testing.
+For doses up to 1300 Mrad, the Araldite 2011 epoxy showed significant darkening, while the UR 6060 epoxy remained clear and transparent.
+The signal integrity on e-links remained good after radiation doses.
+The polyimide braiding used for lashing becomes brittle after 1900 MRad, but this should not effect the electrical readout.
 
 % ==================
 % E-link performance
@@ -168,7 +171,7 @@ The tests performed on e-links are continuity, visual inspection, mass measureme
 The readout of the RD53A chip across e-links is tested using an FC7, as shown in figure~\ref{fig:tap0_vs_length}.
 E-links of two gauges (34 and 36 AWG) and different lengths (0.35 to 2.0 meters).
 Bit error rates are determined using a pseudorandom bitstream (PRBS).
-TAP0 is the signal amplitude setting.
+The RD53 signal amplitude is varied using the TAP0 setting.
 Longer e-links require a larger signal amplitude to maintain a given bit error rate.
 Good performance is seen for e-links up to 2.0 meters.
 
@@ -210,7 +213,7 @@ The KC705 sends PRBS signals on four e-link channels on the aggressor at differe
 \section{Portcards with Optical Links}
 \label{sec:optical}
 
-Dedicated setups with the port-cards reading out single ROC cards with short coaxial cables have been used to test the prototype port-card and validate the optical part of the readout chain.
+Dedicated setups with the portcards reading out single ROC cards with short coaxial cables have been used to test the prototype portcard and validate the optical part of the readout chain.
 
 See figure~\ref{fig:port_card_design}.
 
