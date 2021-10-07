@@ -213,18 +213,16 @@ The KC705 sends PRBS signals on four e-link channels on the aggressor at differe
 \section{Portcards with Optical Links}
 \label{sec:optical}
 
+The portcards play an important role in the readout chain in converting electrical signals from on detector ROCs to optical signals for off detector DTCs.
+The portcard design is shown in figure~\ref{fig:port_card_design}, and photos of a prototype portcard are shown in figure~\ref{fig:port_card_pics}.
 Dedicated setups with the portcards reading out single ROC cards with short coaxial cables have been used to test the prototype portcard and validate the optical part of the readout chain.
-
-See figure~\ref{fig:port_card_design}.
-
-See figure~\ref{fig:port_card_pics}.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.5\textwidth,origin=c]{../figures/port_card_design.png}
 \caption{
 \label{fig:port_card_design}
-Portcard design.
+Portcard design showing three lpGBT and three \vtrxp, which are used to convert high bandwidth electric signals to optical signals.
 }
 \end{figure}
 
@@ -235,38 +233,55 @@ Portcard design.
 \includegraphics[width=0.45\textwidth,origin=c]{../figures/port_card_back.jpeg}
 \caption{
 \label{fig:port_card_pics}
-Portcard photos.
+Front (left) and back (right) of a portcard. Two DC-DC converts and three e-link Molex connectors are on the front, and three lpGBT and \vtrxp\space are on the back.
 }
 \end{figure}
 
-See figure~\ref{fig:lpgbt_eye}.
+% Optical Link Measurements
 
-See figure~\ref{fig:lpgbt_bert}.
+The optical links have been characterized by various measurements.
+In one measurement, the high-speed input to the lpGBT is compared to a 5-bit adjustable constant voltage by a comparator sampled with a phase interpolated clock.
+Transitions of the comparator are counted; within the eye the output should toggle, but above or below the eye, no transitions are expected.
+The data from this measurement are shown in figure~\ref{fig:lpgbt_eye}.
+The high toggle count region is large, corresponding to a large eye diagram and a strong optical signal.
+
+% TODO: Discuss other optical link measurements
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.5\textwidth,origin=c]{../figures/lpGBT_eye.pdf}
+\includegraphics[width=0.6\textwidth,origin=c]{../figures/lpGBT_eye.pdf}
 \caption{
 \label{fig:lpgbt_eye}
 Eye opening monitor from an lpGBT for the 2.56 Gbps optical down link.
 The plot shows the height of the eye as a function of sampling phase.
-The high-speed input to the lpGBT is compared to a variable (5-bit), fixed voltage by a comparator sampled with a phase interpolated clock.
-Transitions of the comparator are counted; within the eye the output should toggle, above or below no transitions are expected.
+% The high-speed input to the lpGBT is compared to a 5-bit adjustable constant voltage by a comparator sampled with a phase interpolated clock.
+% Transitions of the comparator are counted; within the eye the output should toggle, above or below no transitions are expected.
 The color scale shows the number of transitions.
 The region with high toggle count corresponds to the eye opening.
 Equalization parameters are at default settings.
 }
 \end{figure}
 
+% Electrical Link Measurements
+
+The electrical link receivers on the lpGBT are being studied.
+In one measurement, the signal source is a PRBS7 generator in the RD53A readout chip.
+This signal sent over a commercial DP cable, an adapter board, and a Molex FPC cable to be received by an lpGBT.
+The signal is compared to an internal error checker on the lpGBT.
+The bit-error rate is measured as a function of clock sampling phase and equalization setting, and the results are provided in figure~\ref{fig:lpgbt_bert}.
+The phase at the eye crossing is clearly seen, demonstrating the quality of the electrical signal.
+
+% TODO: Discuss other electrical link measurements
+
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=1.0\textwidth,origin=c]{../figures/lpGBT_bert.png}
 \caption{
 \label{fig:lpgbt_bert}
-Scan of bit-error rate vs. clock sampling phase and equalization setting for e-port receivers on the lpGBT driven by the RD53A pixel readout chip over commercial DP cable, adapter and Molex FPC cables.
-The source is a PRBS7 generator in the RD53A read out chip, compared to the internal error checker in the lpGBT.
+Scan of bit-error rate vs. clock sampling phase and equalization setting for e-port receivers on the lpGBT driven by the RD53A pixel readout chip.
+% over commercial DP cable, adapter and Molex FPC cables.
+% The source is a PRBS7 generator in the RD53A readout chip, compared to the internal error checker in the lpGBT.
 Points in green have zero observed errors and report the reciprocal of the number of bits checked.
-The phase at the eye crossing is clearly seen.
 Equalization settings affect the timing slightly.
 }
 \end{figure}
