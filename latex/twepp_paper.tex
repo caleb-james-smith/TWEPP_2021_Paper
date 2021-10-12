@@ -6,9 +6,12 @@
                       % see the JINST-author-manual
 
 \usepackage{lineno}
-\linenumbers
+\usepackage{url}
+\usepackage{hyperref}
 
 \newcommand{\vtrxp}{VTRx+}
+
+\linenumbers
 
 \title{Development of a high bandwidth readout chain for the CMS Phase-2 pixel upgrade}
 
@@ -118,8 +121,8 @@ System readout architecture for the inner tracker. Pixel modules communicate wit
 %
 % Polyimide braiding is used to lash twisted pairs in a bundle to provide durability and prevent wire kinks.
 %
-% Different epoxies tested: Araldite 2011 and UR 6060.
-% Final epoxy used: UR 6060.
+% Different epoxies tested: Araldite 2011 and UR6060.
+% Final epoxy used: UR6060.
 %
 % Different gauges tested: 34 and 36 AWG.
 % Final gauge used: 36 AWG.
@@ -131,7 +134,7 @@ One end of a twisted pair electrical link (e-link) is shown in figure~\ref{fig:e
 Five twisted pair channels (one for a control link and four for data links) are lashed together in a bundle using a polyimide braiding.
 The lashing provides durability and prevents wire kinks.
 Each twisted pair has two wires that are twisted together with 4 twists per inch.
-On each end of an e-link, wires are soldered to a paddle board, and a nonconductive epoxy (UR 6060) is applied to secure the wires.
+On each end of an e-link, wires are soldered to a paddle board, and a nonconductive epoxy is applied to secure the wires.
 Each wire has a 36 AWG copper core (127 microns in diameter) surrounded by a polyimide coating for insolation (45 micron thickness); the total diameter is 217 microns.
 
 \begin{figure}[htbp]
@@ -158,10 +161,10 @@ Cross talk effects from channels within an e-link bundle and from multiple bundl
 The RD53 chip on a Single Chip Card (SCC) is readout over e-links using an FC7.
 Bit error rates are measured using the RD53 chip, and different signal amplitudes for the RD53 are tested to quantify the effect on the error rate.
 
-Radiation testing was performed to determine if e-links can maintain performance after receiving up to 1500 MRad, which surpasses the total does expected during their use in CMS.
-Two different epoxies, Araldite 2011 and UR 6060, were used for e-links that underwent radiation testing.
-For doses up to 1300 Mrad, the Araldite 2011 epoxy showed significant darkening, while the UR 6060 epoxy remained clear and transparent.
-The signal integrity on e-links remained good after radiation doses.
+Radiation testing was performed to determine if e-links can maintain performance after receiving up to 1500 MRad, which surpasses the total dose expected during their use in CMS.
+Two different epoxies, Araldite 2011~(ref.~\cite{ref:araldite}) and UR6060~(ref.~\cite{ref:ur}), were used for e-links that underwent radiation testing.
+For doses up to 1300 Mrad, the Araldite 2011 epoxy showed significant darkening, while the UR6060 epoxy remained clear and transparent.
+The signal integrity on e-links remained good after radiation doses, and UR6060 is chosen as the epoxy used for e-link production.
 The polyimide braiding used for lashing becomes brittle after 1900 MRad, but this should not effect the electrical readout.
 
 % ==================
@@ -297,6 +300,26 @@ The author would like to thank the National Science Foundation for funding this 
 
 \begin{thebibliography}{99}
 
+% Examples
+%
+% \bibitem{a}
+% Author, \emph{Title}, \emph{J. Abbrev.} {\bf vol} (year) pg.
+%
+% \bibitem{b}
+% Author, \emph{Title},
+% arxiv:1234.5678.
+%
+% \bibitem{c}
+% Author, \emph{Title},
+% Publisher (year).
+
+% Please avoid comments such as "For a review'', "For some examples",
+% "and references therein" or move them in the text. In general,
+% please leave only references in the bibliography and move all
+% accessory text in footnotes.
+
+% Also, please have only one work for each \bibitem.
+
 % TDR Ref.
 %
 % @techreport{CERN-LHCC-2017-009,
@@ -388,25 +411,17 @@ Journal of Instrumentation (2017).
 P. Moreira, et al., \emph{The lpGBT: A radiation tolerant ASIC for Data, Timing, Trigger and Control Applications in HL-LHC},
 Proceedings on the Topical Workshop on Electronics for Particle Physics, TWEPP 2019.
 
-% Examples
-%
-% \bibitem{a}
-% Author, \emph{Title}, \emph{J. Abbrev.} {\bf vol} (year) pg.
-%
-% \bibitem{b}
-% Author, \emph{Title},
-% arxiv:1234.5678.
-%
-% \bibitem{c}
-% Author, \emph{Title},
-% Publisher (year).
+% Araldite 2011 is from the Huntsman Corporation.
+% https://www.huntsman.com/products/araldite2000/araldite-2011
 
-% Please avoid comments such as "For a review'', "For some examples",
-% "and references therein" or move them in the text. In general,
-% please leave only references in the bibliography and move all
-% accessory text in footnotes.
+\bibitem{ref:araldite}
+\url{https://www.huntsman.com/products/araldite2000/araldite-2011}.
 
-% Also, please have only one work for each \bibitem.
+% UR6060 is a product of Resinlab, and we purchase it from https://www.ellsworth.com/.
+% https://www.ellsworth.com/products/encapsulants/polyurethane/resinlab-ur6060-polyurethane-encapsulant-clear-50-ml-cartridge/
+
+\bibitem{ref:ur}
+\url{https://www.ellsworth.com/products/encapsulants/polyurethane/resinlab-ur6060-polyurethane-encapsulant-clear-50-ml-cartridge}.
 
 \end{thebibliography}
 \end{document}
