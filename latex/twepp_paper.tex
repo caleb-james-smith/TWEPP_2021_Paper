@@ -130,12 +130,24 @@ System readout architecture for the inner tracker. Pixel modules communicate wit
 % Different twists per inch tested: 3, 4, 6, 8, 16, 24.
 % Final twists per inch used: 4.
 
+% old
+
+% The electrical links are created using low mass, small diameter twisted pairs.
+% One end of a twisted pair electrical link (e-link) is shown in figure~\ref{fig:elink}.
+% Five twisted pair channels (one for a control link and four for data links) are lashed together in a bundle using a polyimide braiding.
+% The lashing provides durability and prevents wire kinks.
+% Each twisted pair has two wires that are twisted together with 4 twists per inch.
+% On each end of an e-link, wires are soldered to a paddle board, and a nonconductive epoxy is applied to secure the wires.
+% Each wire has a 36 AWG copper core (127 microns in diameter) surrounded by a polyimide coating for insolation (45 micron thickness); the total diameter is 217 microns.
+
+% new
+
+The electrical links are created using low mass, small diameter twisted pairs.
 One end of a twisted pair electrical link (e-link) is shown in figure~\ref{fig:elink}.
-Five twisted pair channels (one for a control link and four for data links) are lashed together in a bundle using a polyimide braiding.
-The lashing provides durability and prevents wire kinks.
-Each twisted pair has two wires that are twisted together with 4 twists per inch.
-On each end of an e-link, wires are soldered to a paddle board, and a nonconductive epoxy is applied to secure the wires.
-Each wire has a 36 AWG copper core (127 microns in diameter) surrounded by a polyimide coating for insolation (45 micron thickness); the total diameter is 217 microns.
+E-link bundles are made for to connect to modules and provide each module with one control link twisted pair and multiple data link twisted pairs.
+Each twisted pair is produced using two 36 AWG copper core (127 microns in diameter) wires surrounded by polyimide insulation (45 microns thick) that are twisted together with 4 twists per inch.
+The pairs are soldered to a small, 20 micron thick PCBs that can plug into Molex connectors with 300 micron pitch~\cite{ref:molex17,ref:molex33,ref:molex45}.
+To improve durability and handling, the soldered wires are secured with a non-conductive epoxy, and then the bundle is lashed together using polyimide braiding.
 
 \begin{figure}[htbp]
 \centering
@@ -158,7 +170,7 @@ The prototype low-mass electrical links are being developed and characterized wi
 The signal quality is assessed using eye diagrams to quantify the amplitude and jitter as well as identifying any distortion.
 Bit error rate scans are using to characterize signal integrity across e-links.
 Cross talk effects from channels within an e-link bundle and from multiple bundles is studied.
-The RD53 chip on a Single Chip Card (SCC) is readout over e-links using an FC7.
+The RD53 chip on a Single Chip Card (SCC) is readout over e-links using an FC7~\cite{ref:fc7}.
 Bit error rates are measured using the RD53 chip, and different signal amplitudes for the RD53 are tested to quantify the effect on the error rate.
 
 Radiation testing was performed to determine if e-links can maintain performance after receiving up to 1500 MRad, which surpasses the total dose expected during their use in CMS.
@@ -422,6 +434,33 @@ Proceedings on the Topical Workshop on Electronics for Particle Physics, TWEPP 2
 
 \bibitem{ref:ur}
 \url{https://www.ellsworth.com/products/encapsulants/polyurethane/resinlab-ur6060-polyurethane-encapsulant-clear-50-ml-cartridge}.
+
+% FC7
+\bibitem{ref:fc7}
+\url{https://espace.cern.ch/project-FC7/SitePages/Home.aspx}.
+
+% Molex connectors
+%
+% The company name is Molex.
+% https://www.molex.com/molex/home
+%
+% 17 position part number is 5025981793
+% https://www.molex.com/molex/products/part-detail/ffc_fpc_connectors/5025981793
+%
+% 33 position part number is 5025983393
+% https://www.molex.com/molex/products/part-detail/ffc_fpc_connectors/5025983393
+%
+% 45 position part number is 5025984593
+% https://www.molex.com/molex/products/part-detail/ffc_fpc_connectors/5025984593
+
+\bibitem{ref:molex17}
+\url{https://www.molex.com/molex/products/part-detail/ffc_fpc_connectors/5025981793}.
+
+\bibitem{ref:molex33}
+\url{https://www.molex.com/molex/products/part-detail/ffc_fpc_connectors/5025983393}.
+
+\bibitem{ref:molex45}
+\url{https://www.molex.com/molex/products/part-detail/ffc_fpc_connectors/5025984593}.
 
 \end{thebibliography}
 \end{document}
