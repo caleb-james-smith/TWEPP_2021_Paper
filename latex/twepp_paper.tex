@@ -53,7 +53,7 @@ The development and the characterization of these components is presented along 
 % \collaboration{\includegraphics[height=17mm]{example-image}\\[6pt]
 %   XXX collaboration}
 % or
-\collaboration[c]{on behalf of the CMS collaboration}
+\collaboration[c]{on behalf of the CMS tracker collaboration}
 
 
 % if you write for a special issue this may be useful
@@ -79,8 +79,8 @@ Compared to the LHC, the HL-LHC will have up to 200 proton-proton collisions (pi
 To prepare for this data taking environment, the CMS Tracker will be fully replaced in the Phase-2 upgrade~\cite{ref:tdr,ref:orfanelli}.
 
 The new inner tracker will have about two billion silicon pixels installed.
-The detector will be built using hybrid pixel modules, and the sensor data will be processed by a custom readout chip (ROC) developed by the RD53 collaboration~\cite{ref:rd53}.
-Each frontend readout chip needs a control link to receive trigger, clock, commands, and settings from backend electronics as well as a data links to send pixel data to backend electronics.
+The detector will be built using hybrid pixel modules that process sensor data using a custom readout chip (ROC) initially developed by the RD53 collaboration~\cite{ref:rd53}.
+Each readout chip on the detector needs a control link to receive trigger, clock, commands, and settings from off-detector electronics as well as a data links to send pixel data to off-detector electronics.
 The high bandwidth control and data links are split into two stages: electrical links and optical links.
 System tests of electrical and optical links are presented.
 
@@ -90,16 +90,16 @@ System tests of electrical and optical links are presented.
 An overview of the data readout chain for the inner tracker is shown in figure~\ref{fig:readout}.
 High bandwidth electrical and optical links are used to establish control and data links between pixel modules on the CMS detector and Data Trigger Control (DTC) boards in the counting room.
 Low-mass electronic links (e-links) up to 1.6 meters long provide 160 Mpbs control links (downlinks) and 1.28 Gbps data links (uplinks) between pixel modules and portcards.
-Optical fibers connect portcards, which are mounted on the support structure inside the detector, to DTCs in the counting room to establish 2.5 Gbps control links (downlinks) and 10 Gbps data links (uplinks).
+Optical fibers connect portcards, which are mounted on the support structure inside the detector, to DTC boards in the counting room to establish 2.5 Gbps control links (downlinks) and 10 Gbps data links (uplinks).
 The portcards are printed circuit boards that each carry three Low-Power Gigabit Transceivers (lpGBT) and three Versatile Link PLUS Transceivers (\vtrxp) modules~\cite{ref:lpgbt,ref:vtrxp}.
-The lpGBTs convert optical signals to electrical signals (and vise versa), and the \vtrxp\space modules establish optical links with the DTCs.
+The lpGBTs convert optical signals to electrical signals (and vise versa), and the \vtrxp\space modules establish optical links with the DTC boards.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=1.0\textwidth,origin=c]{../figures/IT_System_Readout.jpg}
 \caption{
 \label{fig:readout}
-System readout architecture for the inner tracker. Pixel modules communicate with portcards through e-links. Portcards communicate with DTCs through optical links.
+System readout architecture for the inner tracker. Pixel modules communicate with portcards through e-links. Portcards communicate with Data Trigger Control (DTC) boards through optical links.
 }
 \end{figure}
 
@@ -213,7 +213,7 @@ The KC705 sends PRBS signals on four e-link channels on the aggressor at differe
 \section{Portcards with Optical Links}
 \label{sec:optical}
 
-The portcards play an important role in the readout chain in converting electrical signals from on detector ROCs to optical signals for off detector DTCs.
+The portcards play an important role in the readout chain in converting electrical signals from on detector ROCs to optical signals for off detector DTC boards.
 The portcard design is shown in figure~\ref{fig:port_card_design}, and photos of a prototype portcard are shown in figure~\ref{fig:port_card_pics}.
 Dedicated setups with the portcards reading out single ROC cards with short coaxial cables have been used to test the prototype portcard and validate the optical part of the readout chain.
 
