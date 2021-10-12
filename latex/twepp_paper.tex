@@ -188,9 +188,6 @@ Good performance is seen for e-links up to 2.0 meters.
 Measurement of signal amplitude (set by TAP0) for electrical links as a function of e-link length for 34 and 36 AWG e-links.
 In the hardware setup (left), an FC7 is connected to an SCC through two commercial display port cables, an adapter board, and an e-link for control and readout communication of an RD53A chip.
 The measurements (right) show the TAP0 setting to achieve a bit error rate of $10^{-11}$ errors per second for e-links of different lengths.
-% For e-links of different lengths, the TAP0 setting to achieve a bit error rate of $10^{-11}$ errors per second is measured (right).
-% The necessary signal amplitude increases with e-link length as expected.
-% Good performance is seen for e-links up to 2.0 meters.
 }
 \end{figure}
 
@@ -232,26 +229,6 @@ The portcard has three lpGBT and three \vtrxp, which are used to convert high ba
 }
 \end{figure}
 
-% \begin{figure}[htbp]
-% \centering
-% \includegraphics[width=0.5\textwidth,origin=c]{../figures/port_card_design.png}
-% \caption{
-% \label{fig:port_card_design}
-% Portcard design showing three lpGBT and three \vtrxp, which are used to convert high bandwidth electric signals to optical signals.
-% }
-% \end{figure}
-%
-% \begin{figure}[htbp]
-% \centering
-% \includegraphics[width=0.45\textwidth,origin=c]{../figures/port_card_front.jpeg}
-% \qquad
-% \includegraphics[width=0.45\textwidth,origin=c]{../figures/port_card_back.jpeg}
-% \caption{
-% \label{fig:port_card_pics}
-% Front (left) and back (right) of a portcard. Two DC-DC converts and three e-link Molex connectors are on the front, and three lpGBT and \vtrxp\space are on the back.
-% }
-% \end{figure}
-
 % Optical Link Measurements
 
 The optical links have been characterized by various measurements.
@@ -269,8 +246,6 @@ The high toggle count region is large, corresponding to a large eye diagram and 
 \label{fig:lpgbt_eye}
 Eye opening monitor from an lpGBT for the 2.56 Gbps optical down link.
 The plot shows the height of the eye as a function of sampling phase.
-% The high-speed input to the lpGBT is compared to a 5-bit adjustable constant voltage by a comparator sampled with a phase interpolated clock.
-% Transitions of the comparator are counted; within the eye the output should toggle, above or below no transitions are expected.
 The color scale shows the number of transitions.
 The region with high toggle count corresponds to the eye opening.
 Equalization parameters are at default settings.
@@ -294,8 +269,6 @@ The phase at the eye crossing is clearly seen, demonstrating the quality of the 
 \caption{
 \label{fig:lpgbt_bert}
 Scan of bit-error rate vs. clock sampling phase and equalization setting for e-port receivers on the lpGBT driven by the RD53A pixel readout chip.
-% over commercial display port cable, adapter and Molex FPC cables.
-% The source is a PRBS7 generator in the RD53A readout chip, compared to the internal error checker in the lpGBT.
 Points in green have zero observed errors and report the reciprocal of the number of bits checked.
 Equalization settings affect the timing slightly.
 }
@@ -308,7 +281,6 @@ The data readout chain is an important part of the CMS Phase-2 pixel upgrade.
 Various system tests have been performed to characterize the electrical and optical links that form the readout chain.
 Electrical links can provide stable links at the required lengths, and crosstalk has a small effect on signal quality.
 Conversion from electrical to optical links is working well, and the optical links have good performance.
-% Current studies demonstrate good performance of electrical and optical links.
 These results will inform the final design, production, and testing of components for the pixel detector readout chain.
 
 % Appendices
