@@ -136,7 +136,7 @@ Each wire has a 36 AWG copper core (127 microns in diameter) surrounded by a pol
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.5\textwidth,origin=c]{../figures/e-link-1.jpg}
+\includegraphics[width=0.6\textwidth,origin=c]{../figures/e-link-1.jpg}
 \caption{
 \label{fig:elink}
 One end of a twisted pair electrical link (e-link).
@@ -177,9 +177,12 @@ Good performance is seen for e-links up to 2.0 meters.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.5\textwidth,origin=c]{../figures/fc7_elink_scc_setup.jpg}
+% $\vcenter{\includegraphics[height=2cm]{../figures/fc7_elink_scc_setup.jpg}}$
+% \hspace{1mm}
+% $\vcenter{\includegraphics[height=2cm]{../figures/BERT_TAP0_vs_Length-crop.pdf}}$
+\includegraphics[width=0.50\textwidth,origin=c]{../figures/fc7_elink_scc_setup.jpg}
 \qquad
-\includegraphics[width=0.4\textwidth,origin=c]{../figures/BERT_TAP0_vs_Length.pdf}
+\includegraphics[width=0.40\textwidth,origin=c]{../figures/BERT_TAP0_vs_Length-crop.pdf}
 \caption{
 \label{fig:tap0_vs_length}
 Measurement of signal amplitude (set by TAP0) for electrical links as a function of e-link length for 34 and 36 AWG e-links.
@@ -199,9 +202,9 @@ Thus, external crosstalk from the single aggressor e-link has a small effect on 
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.5\textwidth,origin=c,angle=270]{../figures/external_crosstalk_setup.jpg}
+\includegraphics[width=0.50\textwidth,origin=c,angle=270]{../figures/external_crosstalk_setup.jpg}
 \qquad
-\includegraphics[width=0.5\textwidth,origin=c]{../figures/BERT_TAP0_Scan_External_Crosstalk.pdf}
+\includegraphics[width=0.46\textwidth,origin=c]{../figures/BERT_TAP0_Scan_External_Crosstalk-crop.pdf}
 \caption{
 \label{fig:external_crosstalk}
 Measurement of the effect of external crosstalk on data transmission.
@@ -214,28 +217,40 @@ The KC705 sends PRBS signals on four e-link channels on the aggressor at differe
 \label{sec:optical}
 
 The portcards play an important role in the readout chain in converting electrical signals from on detector ROCs to optical signals for off detector DTC boards.
-The portcard design is shown in figure~\ref{fig:port_card_design}, and photos of a prototype portcard are shown in figure~\ref{fig:port_card_pics}.
+The portcard design and a photo of a prototype portcard are shown in figure~\ref{fig:port_card}.
 Dedicated setups with the portcards reading out single ROC cards with short coaxial cables have been used to test the prototype portcard and validate the optical part of the readout chain.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.5\textwidth,origin=c]{../figures/port_card_design.png}
-\caption{
-\label{fig:port_card_design}
-Portcard design showing three lpGBT and three \vtrxp, which are used to convert high bandwidth electric signals to optical signals.
-}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.45\textwidth,origin=c]{../figures/port_card_front.jpeg}
+\includegraphics[width=0.45\textwidth,origin=c]{../figures/port_card_design.png}
 \qquad
 \includegraphics[width=0.45\textwidth,origin=c]{../figures/port_card_back.jpeg}
 \caption{
-\label{fig:port_card_pics}
-Front (left) and back (right) of a portcard. Two DC-DC converts and three e-link Molex connectors are on the front, and three lpGBT and \vtrxp\space are on the back.
+\label{fig:port_card}
+Portcard design (left) and prototype (right).
+The portcard has three lpGBT and three \vtrxp, which are used to convert high bandwidth electric signals to optical signals.
 }
 \end{figure}
+
+% \begin{figure}[htbp]
+% \centering
+% \includegraphics[width=0.5\textwidth,origin=c]{../figures/port_card_design.png}
+% \caption{
+% \label{fig:port_card_design}
+% Portcard design showing three lpGBT and three \vtrxp, which are used to convert high bandwidth electric signals to optical signals.
+% }
+% \end{figure}
+%
+% \begin{figure}[htbp]
+% \centering
+% \includegraphics[width=0.45\textwidth,origin=c]{../figures/port_card_front.jpeg}
+% \qquad
+% \includegraphics[width=0.45\textwidth,origin=c]{../figures/port_card_back.jpeg}
+% \caption{
+% \label{fig:port_card_pics}
+% Front (left) and back (right) of a portcard. Two DC-DC converts and three e-link Molex connectors are on the front, and three lpGBT and \vtrxp\space are on the back.
+% }
+% \end{figure}
 
 % Optical Link Measurements
 
