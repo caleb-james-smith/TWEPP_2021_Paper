@@ -86,8 +86,8 @@ Compared to the LHC, the HL-LHC will have up to 200 proton-proton collisions (pi
 To prepare for this data taking environment, the CMS Tracker will be fully replaced in the Phase-2 upgrade~\cite{ref:tdr,ref:orfanelli}.
 
 The new inner tracker will have about two billion silicon pixels installed.
-The detector will be built using hybrid pixel modules that process sensor data using a custom readout chip (ROC) initially developed by the RD53 collaboration~\cite{ref:rd53}.
-Each readout chip on the detector needs a control link to receive trigger, clock, commands, and settings from off-detector electronics as well as a data links to send pixel data to off-detector electronics.
+The detector will be built using hybrid pixel modules that process sensor data using a custom readout chip initially developed by the RD53 collaboration~\cite{ref:rd53}.
+Each readout chip on the detector needs a control link to receive trigger, clock, commands, and settings from off-detector electronics as well as data links to send pixel data to off-detector electronics.
 The high bandwidth control and data links are split into two stages: electrical links and optical links.
 System tests of electrical and optical links are presented.
 
@@ -98,8 +98,8 @@ An overview of the data readout chain for the inner tracker is shown in figure~\
 High bandwidth electrical and optical links are used to establish control and data links between pixel modules on the CMS detector and Data Trigger Control (DTC) boards in the counting room.
 Low-mass electronic links (e-links) up to 1.6 meters long provide 160 Mpbs control links (downlinks) and 1.28 Gbps data links (uplinks) between pixel modules and portcards.
 Optical fibers connect portcards, which are mounted on the support structure inside the detector, to DTC boards in the counting room to establish 2.5 Gbps control links (downlinks) and 10 Gbps data links (uplinks).
-The portcards are printed circuit boards that each carry three Low-Power Gigabit Transceivers (lpGBT) and three Versatile Link PLUS Transceivers (\vtrxp) modules~\cite{ref:lpgbt,ref:vtrxp}.
-The lpGBTs convert optical signals to electrical signals (and vise versa), and the \vtrxp\space modules establish optical links with the DTC boards.
+The portcards each carry three Low-Power Gigabit Transceivers (lpGBT) and three Versatile Link PLUS Transceivers (\vtrxp) modules~\cite{ref:lpgbt,ref:vtrxp}.
+The lpGBTs convert optical signals to electrical signals (and vice versa), and the \vtrxp\space modules establish optical links with the DTC boards.
 
 \begin{figure}[htbp]
 \centering
@@ -146,11 +146,11 @@ System readout architecture for the inner tracker. Pixel modules communicate wit
 
 % new
 
-The electrical links are created using low mass, small diameter twisted pairs.
-One end of a twisted pair electrical link (e-link) is shown in figure~\ref{fig:elink}.
-E-link bundles are made for to connect to modules and provide each module with one control link twisted pair and multiple data link twisted pairs.
+The electrical links (e-links) are created using low mass, small diameter twisted pairs.
+One end of a twisted pair electrical link is shown in figure~\ref{fig:elink}.
+E-link bundles are made to connect to modules and provide each module with one control link twisted pair and multiple data link twisted pairs.
 Each twisted pair is produced using two 36 AWG copper core (127 microns in diameter) wires surrounded by polyimide insulation (45 microns thick) that are twisted together with 4 twists per inch.
-The pairs are soldered to a small, 20 micron thick PCBs that can plug into Molex connectors with 300 micron pitch~\cite{ref:molex17,ref:molex33,ref:molex45}.
+The pairs are soldered to small, 20 micron thick PCBs that can plug into Molex connectors with 300 micron pitch~\cite{ref:molex17,ref:molex33,ref:molex45}.
 To improve durability and handling, the soldered wires are secured with a non-conductive epoxy, and then the bundle is lashed together using polyimide braiding.
 
 \begin{figure}[htbp]
@@ -172,16 +172,10 @@ One end of a twisted pair electrical link (e-link).
 
 The prototype low-mass electrical links are being developed and characterized with a series of measurements.
 The signal quality is assessed using eye diagrams to quantify the amplitude and jitter as well as identifying any distortion.
-Bit error rate scans are using to characterize signal integrity across e-links.
-Cross talk effects from channels within an e-link bundle and from multiple bundles is studied.
-The RD53 chip on a Single Chip Card (SCC) is readout over e-links using an FC7~\cite{ref:fc7}.
+Bit error rate scans are used to characterize signal integrity across e-links.
+Cross talk effects from channels within an e-link bundle (internal) and from multiple bundles (external) is studied.
+The RD53 chip on a Single Chip Card (SCC) is read out over e-links using an FC7~\cite{ref:fc7}.
 Bit error rates are measured using the RD53 chip, and different signal amplitudes for the RD53 are tested to quantify the effect on the error rate.
-
-Radiation testing was performed to determine if e-links can maintain performance after receiving up to 1500 \mrad, which surpasses the total dose expected during their use in CMS.
-Two different epoxies, Araldite 2011~(ref.~\cite{ref:araldite}) and UR6060~(ref.~\cite{ref:ur}), were used for e-links that underwent radiation testing.
-For doses up to 1300 \mrad, the Araldite 2011 epoxy showed significant darkening, while the UR6060 epoxy remained clear and transparent.
-The signal integrity on e-links remained good after radiation doses, and UR6060 is chosen as the epoxy used for e-link production.
-The polyimide braiding used for lashing becomes brittle after 1900 \mrad, but this should not effect the electrical readout.
 
 % ==================
 % E-link performance
@@ -229,12 +223,18 @@ The KC705 sends PRBS signals on four e-link channels on the aggressor at differe
 }
 \end{figure}
 
+Radiation testing was performed to determine if e-links can maintain performance after receiving up to 1500 \mrad, which surpasses the total dose expected during their use in CMS.
+Two different epoxies, Araldite 2011~(ref.~\cite{ref:araldite}) and UR6060~(ref.~\cite{ref:ur}), were used for e-links that underwent radiation testing.
+For doses up to 1300 \mrad, the Araldite 2011 epoxy showed significant darkening, while the UR6060 epoxy remained clear and transparent.
+The signal integrity on e-links remained good after radiation doses, and UR6060 is chosen as the epoxy used for e-link production.
+The polyimide braiding used for lashing becomes brittle after 1900 \mrad, but this should not effect the electrical readout.
+
 \section{Portcards with Optical Links}
 \label{sec:optical}
 
-The portcards play an important role in the readout chain in converting electrical signals from on detector ROCs to optical signals for off detector DTC boards.
+The portcards play an important role in the readout chain in converting electrical signals from on detector readout chips to optical signals for off detector DTC boards.
 The portcard design and a photo of a prototype portcard are shown in figure~\ref{fig:port_card}.
-Dedicated setups with the portcards reading out single ROC cards with short coaxial cables have been used to test the prototype portcard and validate the optical part of the readout chain.
+Dedicated setups with the portcards reading out SCCs with short coaxial cables have been used to test the prototype portcard and validate the optical part of the readout chain.
 
 \begin{figure}[htbp]
 \centering
@@ -275,7 +275,7 @@ Equalization parameters are at default settings.
 
 The electrical link receivers on the lpGBT are being studied.
 In one measurement, the signal source is a PRBS7 generator in the RD53A readout chip.
-This signal sent over a commercial display port cable, an adapter board, and a Molex FPC cable (ref.~\cite{ref:molex_cable}) to be received by an lpGBT.
+This signal is sent over a commercial display port cable, an adapter board, and a Molex FPC cable (ref.~\cite{ref:molex_cable}) to be received by an lpGBT.
 The signal is compared to an internal error checker on the lpGBT.
 The bit-error rate is measured as a function of clock sampling phase and equalization setting, and the results are provided in figure~\ref{fig:lpgbt_bert}.
 The phase at the eye crossing is clearly seen, demonstrating the quality of the electrical signal.
