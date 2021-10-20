@@ -176,17 +176,17 @@ The signal quality is assessed using eye diagrams, which overlay transitions bet
 The eye diagram amplitude and jitter are used to quantify the quality of the differential signal and identify any distortion.
 Bit error rate scans are used to characterize signal integrity across e-links.
 Cross talk effects from channels within an e-link bundle (internal) and from multiple bundles (external) are studied.
-Furthermore, the RD53 chip on a Single Chip Card (SCC) is read out over e-links using an FC7 mezzanine card~\cite{ref:fc7}.
-Bit error rates are measured using the RD53 chip, and different signal amplitudes for the RD53 are tested to quantify the effect on the error rate.
 
 % ==================
 % E-link performance
 % ==================
 
-The readout of the RD53 chip across e-links is tested using an FC7 mezzanine card, as shown in \fig~\ref{fig:tap0_vs_length}.
-E-links of two gauges (34 and 36 AWG) and different lengths (from 0.35 to 2.0 meters) are used to readout the RD53 chip.
-Bit error rates are determined using a pseudorandom bitstream (PRBS).
-The RD53 signal amplitude is varied using the TAP0 setting.
+Furthermore, the RD53 chip on a Single Chip Card (SCC) is read out over e-links using an FC7 mezzanine card~\cite{ref:fc7}, as shown in \fig~\ref{fig:tap0_vs_length}.
+% Bit error rates are measured using the RD53 chip, and different signal amplitudes for the RD53 are tested to quantify the effect on the error rate.
+% The readout of the RD53 chip across e-links is tested using an FC7 mezzanine card, as shown in \fig~\ref{fig:tap0_vs_length}.
+E-links of two gauges (34 and 36 AWG) and different lengths (from 0.35 to 2.0 meters) are used in the readout chain.
+Bit error rates are determined using a pseudorandom binary sequence (PRBS) that is sent from the RD53 chip to the FC7 mezzanine card.
+The amplitude of the PRBS signal is varied using the ``TAP0'' pre-emphasis DAC setting, which ranges from 0 to 1000 and controls the signal amplitude output by the current mode logic (CML) driver on the RD53 chip.
 Longer e-links require a larger signal amplitude to maintain a given bit error rate.
 Good performance is seen for e-links up to 2.0 meters.
 
@@ -220,7 +220,7 @@ Thus, external crosstalk from the single aggressor e-link has a small effect on 
 \caption{
 \label{fig:external_crosstalk}
 Measurement of the effect of external crosstalk on data transmission.
-Two e-links (1.4 meters, 36 AWG) are twisted together (left), with a victim e-link connected between an FC7 mezzanine card and SCC to readout from an RD53 chip, and an aggressor e-link connected to a KC705.
+Two e-links (1.4 meters, 36 AWG) are twisted together (left), with a victim e-link connected between an FC7 mezzanine card and SCC to read from an RD53 chip, and an aggressor e-link connected to a KC705.
 The KC705 sends PRBS signals on four e-link channels on the aggressor at different amplitudes.
 }
 \end{figure}
