@@ -265,11 +265,12 @@ The high toggle count region is large, corresponding to a large eye diagram and 
 \includegraphics[width=1.0\textwidth,origin=c]{../figures/lpGBT_eye.pdf}
 \caption{
 \label{fig:lpgbt_eye}
-Eye opening monitor from an lpGBT for the 2.56 Gbps optical down link.
-The plot shows the height of the eye as a function of sampling phase.
-The color scale shows the number of transitions.
-The region with high toggle count corresponds to the eye opening.
-Equalization parameters are at default settings.
+Eye opening monitor from an lpGBT for the 2.56 Gbps optical down link with equalization parameters at default settings.
+% The plot shows the height of the eye as a function of sampling phase.
+The vertical axis is a 5-bit encoded digital-to-analog converter (DAC) value that corresponds to the constant voltage that the high-speed signal is compared with.
+The horizontal axis is a 6-bit encoded DAC value that governs the sampling phase used for this comparison.
+The color scale shows the number of transitions, which is the toggle count.
+Regions with high toggle count correspond to the eye opening, while regions with low toggle count are outside the eye opening.
 }
 \end{figure}
 
