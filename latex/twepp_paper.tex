@@ -172,18 +172,19 @@ One end of a twisted pair electrical link (e-link).
 % The tests performed on e-links are continuity, visual inspection, mass measurement, DC resistance, differential eye diagram, bit error rate tests (BERT), impedance measurements, cross talk, thermal cycling, and radiation.
 
 The prototype low-mass electrical links are developed and characterized with a series of measurements.
-The signal quality is assessed using eye diagrams to quantify the amplitude and jitter as well as identifying any distortion.
+The signal quality is assessed using eye diagrams, which overlay transitions between binary states from repeated measurements of the signal over a time interval.
+The eye diagram amplitude and jitter are used to quantify the quality of the differential signal and identify any distortion.
 Bit error rate scans are used to characterize signal integrity across e-links.
-Cross talk effects from channels within an e-link bundle (internal) and from multiple bundles (external) is studied.
-The RD53 chip on a Single Chip Card (SCC) is read out over e-links using an FC7 mezzanine card~\cite{ref:fc7}.
+Cross talk effects from channels within an e-link bundle (internal) and from multiple bundles (external) are studied.
+Furthermore, the RD53 chip on a Single Chip Card (SCC) is read out over e-links using an FC7 mezzanine card~\cite{ref:fc7}.
 Bit error rates are measured using the RD53 chip, and different signal amplitudes for the RD53 are tested to quantify the effect on the error rate.
 
 % ==================
 % E-link performance
 % ==================
 
-The readout of the RD53A chip across e-links is tested using an FC7 mezzanine card, as shown in \fig~\ref{fig:tap0_vs_length}.
-E-links of two gauges (34 and 36 AWG) and different lengths (from 0.35 to 2.0 meters) are used to readout the RD53A chip.
+The readout of the RD53 chip across e-links is tested using an FC7 mezzanine card, as shown in \fig~\ref{fig:tap0_vs_length}.
+E-links of two gauges (34 and 36 AWG) and different lengths (from 0.35 to 2.0 meters) are used to readout the RD53 chip.
 Bit error rates are determined using a pseudorandom bitstream (PRBS).
 The RD53 signal amplitude is varied using the TAP0 setting.
 Longer e-links require a larger signal amplitude to maintain a given bit error rate.
@@ -200,7 +201,7 @@ Good performance is seen for e-links up to 2.0 meters.
 \caption{
 \label{fig:tap0_vs_length}
 Measurement of signal amplitude (set by TAP0) for electrical links as a function of e-link length for 34 and 36 AWG e-links.
-In the hardware setup (left), an FC7 mezzanine card is connected to an SCC through two commercial display port cables, an adapter board, and an e-link for control and readout communication of an RD53A chip.
+In the hardware setup (left), an FC7 mezzanine card is connected to an SCC through two commercial display port cables, an adapter board, and an e-link for control and readout communication of an RD53 chip.
 The measurements (right) show the TAP0 setting to achieve a bit error rate of $10^{-11}$ errors per second for e-links of different lengths.
 }
 \end{figure}
@@ -219,7 +220,7 @@ Thus, external crosstalk from the single aggressor e-link has a small effect on 
 \caption{
 \label{fig:external_crosstalk}
 Measurement of the effect of external crosstalk on data transmission.
-Two e-links (1.4 meters, 36 AWG) are twisted together (left), with a victim e-link connected between an FC7 mezzanine card and SCC to readout from an RD53A chip, and an aggressor e-link connected to a KC705.
+Two e-links (1.4 meters, 36 AWG) are twisted together (left), with a victim e-link connected between an FC7 mezzanine card and SCC to readout from an RD53 chip, and an aggressor e-link connected to a KC705.
 The KC705 sends PRBS signals on four e-link channels on the aggressor at different amplitudes.
 }
 \end{figure}
@@ -275,7 +276,7 @@ Equalization parameters are at default settings.
 % Electrical Link Measurements
 
 The electrical link receivers on the lpGBT are being studied.
-In one measurement, the signal source is a PRBS7 generator in the RD53A readout chip.
+In one measurement, the signal source is a PRBS7 generator in the RD53 readout chip.
 This signal is sent over a commercial display port cable, an adapter board, and a Molex FPC cable (Ref.~\cite{ref:molex_cable}) to be received by an lpGBT.
 The signal is compared to an internal error checker on the lpGBT.
 The bit-error rate is measured as a function of clock sampling phase and equalization setting, and the results are provided in \fig~\ref{fig:lpgbt_bert}.
@@ -288,7 +289,7 @@ The phase at the eye crossing is clearly seen, demonstrating the quality of the 
 \includegraphics[width=1.0\textwidth,origin=c]{../figures/lpGBT_bert.png}
 \caption{
 \label{fig:lpgbt_bert}
-Scan of bit-error rate vs. clock sampling phase and equalization setting for e-port receivers on the lpGBT driven by the RD53A pixel readout chip.
+Scan of bit-error rate vs. clock sampling phase and equalization setting for e-port receivers on the lpGBT driven by the RD53 pixel readout chip.
 Points in green have zero observed errors and report the reciprocal of the number of bits checked.
 Equalization settings affect the timing slightly.
 }
