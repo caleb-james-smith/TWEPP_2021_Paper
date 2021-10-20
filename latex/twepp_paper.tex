@@ -186,7 +186,7 @@ Furthermore, the RD53 chip on a Single Chip Card (SCC) is read out over e-links 
 % The readout of the RD53 chip across e-links is tested using an FC7 mezzanine card, as shown in \fig~\ref{fig:tap0_vs_length}.
 E-links of two gauges (34 and 36 AWG) and different lengths (from 0.35 to 2.0 meters) are used in the readout chain.
 Bit error rates are determined using a pseudorandom binary sequence (PRBS) that is sent from the RD53 chip to the FC7 mezzanine card.
-The amplitude of the PRBS signal is varied using the ``TAP0'' pre-emphasis DAC setting, which ranges from 0 to 1000 and controls the signal amplitude output by the current mode logic (CML) driver on the RD53 chip.
+The amplitude of the PRBS signal is varied using the ``TAP0'' pre-emphasis digital-to-analog converter (DAC) setting, which ranges from 0 to 1000 and controls the amplitude of the signal output by the current mode logic (CML) driver on the RD53 chip.
 Longer e-links require a larger signal amplitude to maintain a given bit error rate.
 Good performance is seen for e-links up to 2.0 meters.
 
@@ -201,8 +201,8 @@ Good performance is seen for e-links up to 2.0 meters.
 \caption{
 \label{fig:tap0_vs_length}
 Measurement of signal amplitude (set by TAP0) for electrical links as a function of e-link length for 34 and 36 AWG e-links.
-In the hardware setup (left), an FC7 mezzanine card is connected to an SCC through two commercial display port cables, an adapter board, and an e-link for control and readout communication of an RD53 chip.
-The measurements (right) show the TAP0 setting to achieve a bit error rate of $10^{-11}$ errors per second for e-links of different lengths.
+In the hardware setup (left), an FC7 mezzanine card is connected to an SCC through two commercial display port cables, an adapter board, and an e-link for control and readout of an RD53 chip.
+The measurements (right) show the TAP0 setting to achieve a bit error rate of $10^{-11}$ for e-links of different lengths.
 }
 \end{figure}
 
@@ -262,7 +262,7 @@ The high toggle count region is large, corresponding to a large eye diagram and 
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.8\textwidth,origin=c]{../figures/lpGBT_eye.pdf}
+\includegraphics[width=1.0\textwidth,origin=c]{../figures/lpGBT_eye.pdf}
 \caption{
 \label{fig:lpgbt_eye}
 Eye opening monitor from an lpGBT for the 2.56 Gbps optical down link.
