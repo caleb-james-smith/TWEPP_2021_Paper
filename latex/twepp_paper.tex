@@ -281,7 +281,11 @@ In one measurement, the signal source is a PRBS7 generator in the RD53 readout c
 This signal is sent over a commercial display port cable, an adapter board, and a Molex FPC cable (Ref.~\cite{ref:molex_cable}) to be received by an lpGBT.
 The signal is compared to an internal error checker on the lpGBT.
 The bit-error rate is measured as a function of clock sampling phase and equalization setting, and the results are provided in \fig~\ref{fig:lpgbt_bert}.
-The phase at the eye crossing is clearly seen, demonstrating the quality of the electrical signal.
+% The phase at the eye crossing is clearly seen, demonstrating the quality of the electrical signal.
+The region with a bit error rate of $9.3 * 10^{-10}$ corresponds to zero errors for the total number of bits checked.
+The phases with zero errors are those where the eye diagram is open.
+Changing the equalization setting has only a small effect on the timing.
+Low error rates on the lpGBT electrical link receivers are achieved by tuning the sampling phase.
 
 % TODO: Discuss other electrical link measurements
 
@@ -290,9 +294,10 @@ The phase at the eye crossing is clearly seen, demonstrating the quality of the 
 \includegraphics[width=1.0\textwidth,origin=c]{../figures/lpGBT_bert.png}
 \caption{
 \label{fig:lpgbt_bert}
-Scan of bit-error rate vs. clock sampling phase and equalization setting for e-port receivers on the lpGBT driven by the RD53 pixel readout chip.
+Scan of bit-error rate vs. clock sampling phase and equalization setting for electrical link receivers on the lpGBT driven by the RD53 pixel readout chip.
+The number of bits checked at each setting is $1.07 * 10^{9}$.
 Points in green have zero observed errors and report the reciprocal of the number of bits checked.
-Equalization settings affect the timing slightly.
+% Equalization settings affect the timing slightly.
 }
 \end{figure}
 
