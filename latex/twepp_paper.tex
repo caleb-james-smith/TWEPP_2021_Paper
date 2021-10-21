@@ -11,6 +11,7 @@
 
 \newcommand{\vtrxp}{VTRx+}
 \newcommand{\mrad}{Mrad}
+\newcommand{\fig}{Figure}
 
 \linenumbers
 
@@ -45,8 +46,8 @@
 
 \abstract{
 The CMS collaboration is building a new inner tracking pixel detector for the High-Luminosity LHC.
-Each pixel readout chip will be controlled with a single serial input stream at 160 Mbps and will send out data via four CML 1.28 Gbps outputs.
-The readout chips will be grouped in modules and connected with up to 1.6 m long low-mass electrical links to Low-Power Gigabit Transceivers (lpGBT) and Versatile Link PLUS Transceivers (\vtrxp) modules that send the data optically to off-detector electronics at 10 Gbps.
+Each pixel readout chip will be controlled with a single serial input stream at 160 Mbps and will send out data via four current mode logic (CML) 1.28 Gbps outputs.
+The readout chips will be grouped in modules and connected with up to 1.6 m long low-mass electrical links to Low-Power Gigabit Transceivers (lpGBT) and Versatile Link PLUS Transceiver (\vtrxp) modules that send the data optically to off-detector electronics at 10 Gbps.
 The development and the characterization of these components is presented along with system tests of the readout chain.
 }
 
@@ -81,32 +82,32 @@ The development and the characterization of these components is presented along 
 \section{Introduction}
 \label{sec:introduction}
 
-The High-Luminosity LHC (HL-LHC) will provide CMS with a peak instantaneous luminosity of $7.5 \times 10^{34} \mathrm{cm}^{-2} \mathrm{s}^{-1}$ starting in 2027.
-Compared to the LHC, the HL-LHC will have up to 200 proton-proton collisions (pileup) per event and will shower CMS with a higher radiation fluence.
+The High-Luminosity LHC (HL-LHC) will provide CMS with a peak instantaneous luminosity of $7.5 \times 10^{34} \mathrm{cm}^{-2} \mathrm{s}^{-1}$.
+Compared to the LHC, the HL-LHC will have up to 200 proton-proton collisions (pileup) per event and will result in a higher radiation fluence.
 To prepare for this data taking environment, the CMS Tracker will be fully replaced in the Phase-2 upgrade~\cite{ref:tdr,ref:orfanelli}.
 
 The new inner tracker will have about two billion silicon pixels installed.
-The detector will be built using hybrid pixel modules that process sensor data using a custom readout chip (ROC) initially developed by the RD53 collaboration~\cite{ref:rd53}.
-Each readout chip on the detector needs a control link to receive trigger, clock, commands, and settings from off-detector electronics as well as a data links to send pixel data to off-detector electronics.
+The detector will be built using hybrid pixel modules that process sensor data using a custom readout chip initially developed by the RD53 collaboration~\cite{ref:rd53}.
+Each readout chip on the detector needs a control link to receive trigger, clock, commands, and settings from off-detector electronics as well as data links to send pixel data to off-detector electronics.
 The high bandwidth control and data links are split into two stages: electrical links and optical links.
 System tests of electrical and optical links are presented.
 
 \section{Data Readout Chain}
 \label{sec:readout}
 
-An overview of the data readout chain for the inner tracker is shown in figure~\ref{fig:readout}.
+An overview of the data readout chain for the inner tracker is shown in \fig~\ref{fig:readout}.
 High bandwidth electrical and optical links are used to establish control and data links between pixel modules on the CMS detector and Data Trigger Control (DTC) boards in the counting room.
-Low-mass electronic links (e-links) up to 1.6 meters long provide 160 Mpbs control links (downlinks) and 1.28 Gbps data links (uplinks) between pixel modules and portcards.
+Low-mass electronic links (e-links) up to 1.6 meters long provide 160 Mbps control links (downlinks) and 1.28 Gbps data links (uplinks) between pixel modules and portcards.
 Optical fibers connect portcards, which are mounted on the support structure inside the detector, to DTC boards in the counting room to establish 2.5 Gbps control links (downlinks) and 10 Gbps data links (uplinks).
-The portcards are printed circuit boards that each carry three Low-Power Gigabit Transceivers (lpGBT) and three Versatile Link PLUS Transceivers (\vtrxp) modules~\cite{ref:lpgbt,ref:vtrxp}.
-The lpGBTs convert optical signals to electrical signals (and vise versa), and the \vtrxp\space modules establish optical links with the DTC boards.
+The portcards each carry three Low-Power Gigabit Transceivers (lpGBT) and three Versatile Link PLUS Transceiver (\vtrxp) modules~\cite{ref:lpgbt_1,ref:vtrxp}.
+The lpGBTs convert optical signals to electrical signals (and vice versa), and the \vtrxp\space modules establish optical links with the DTC boards.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=1.0\textwidth,origin=c]{../figures/IT_System_Readout.jpg}
+\includegraphics[width=1.0\textwidth,origin=c]{../figures/IT_System_Readout_2-crop.pdf}
 \caption{
 \label{fig:readout}
-System readout architecture for the inner tracker. Pixel modules communicate with portcards through e-links. Portcards communicate with Data Trigger Control (DTC) boards through optical links.
+System readout architecture for the inner tracker~\cite{ref:orfanelli}. Pixel modules communicate with portcards through e-links. Portcards communicate with Data Trigger Control (DTC) boards through optical links.
 }
 \end{figure}
 
@@ -137,7 +138,7 @@ System readout architecture for the inner tracker. Pixel modules communicate wit
 % old
 
 % The electrical links are created using low mass, small diameter twisted pairs.
-% One end of a twisted pair electrical link (e-link) is shown in figure~\ref{fig:elink}.
+% One end of a twisted pair electrical link (e-link) is shown in \fig~\ref{fig:elink}.
 % Five twisted pair channels (one for a control link and four for data links) are lashed together in a bundle using a polyimide braiding.
 % The lashing provides durability and prevents wire kinks.
 % Each twisted pair has two wires that are twisted together with 4 twists per inch.
@@ -146,11 +147,11 @@ System readout architecture for the inner tracker. Pixel modules communicate wit
 
 % new
 
-The electrical links are created using low mass, small diameter twisted pairs.
-One end of a twisted pair electrical link (e-link) is shown in figure~\ref{fig:elink}.
-E-link bundles are made for to connect to modules and provide each module with one control link twisted pair and multiple data link twisted pairs.
-Each twisted pair is produced using two 36 AWG copper core (127 microns in diameter) wires surrounded by polyimide insulation (45 microns thick) that are twisted together with 4 twists per inch.
-The pairs are soldered to a small, 20 micron thick PCBs that can plug into Molex connectors with 300 micron pitch~\cite{ref:molex17,ref:molex33,ref:molex45}.
+The electrical links (e-links) are created using low mass, small diameter twisted pair cables.
+One end of a twisted pair electrical link is shown in \fig~\ref{fig:elink}.
+E-link bundles are made to connect to modules and provide each module with one control link twisted pair and multiple data link twisted pairs.
+Each twisted pair is produced using two 36 American Wire Gauge (AWG) copper core (127 microns in diameter) wires surrounded by polyimide insulation (45 microns thick) that are twisted together with 4 twists per inch.
+The pairs are soldered to small, 20 micron thick PCBs that can plug into Molex connectors with 300 micron pitch~\cite{ref:molex17,ref:molex33,ref:molex45}.
 To improve durability and handling, the soldered wires are secured with a non-conductive epoxy, and then the bundle is lashed together using polyimide braiding.
 
 \begin{figure}[htbp]
@@ -170,28 +171,25 @@ One end of a twisted pair electrical link (e-link).
 
 % The tests performed on e-links are continuity, visual inspection, mass measurement, DC resistance, differential eye diagram, bit error rate tests (BERT), impedance measurements, cross talk, thermal cycling, and radiation.
 
-The prototype low-mass electrical links are being developed and characterized with a series of measurements.
-The signal quality is assessed using eye diagrams to quantify the amplitude and jitter as well as identifying any distortion.
-Bit error rate scans are using to characterize signal integrity across e-links.
-Cross talk effects from channels within an e-link bundle and from multiple bundles is studied.
-The RD53 chip on a Single Chip Card (SCC) is readout over e-links using an FC7~\cite{ref:fc7}.
-Bit error rates are measured using the RD53 chip, and different signal amplitudes for the RD53 are tested to quantify the effect on the error rate.
-
-Radiation testing was performed to determine if e-links can maintain performance after receiving up to 1500 \mrad, which surpasses the total dose expected during their use in CMS.
-Two different epoxies, Araldite 2011~(ref.~\cite{ref:araldite}) and UR6060~(ref.~\cite{ref:ur}), were used for e-links that underwent radiation testing.
-For doses up to 1300 \mrad, the Araldite 2011 epoxy showed significant darkening, while the UR6060 epoxy remained clear and transparent.
-The signal integrity on e-links remained good after radiation doses, and UR6060 is chosen as the epoxy used for e-link production.
-The polyimide braiding used for lashing becomes brittle after 1900 \mrad, but this should not effect the electrical readout.
+The prototype low-mass electrical links are developed and characterized with a series of measurements.
+The signal quality is assessed using eye diagrams, which overlay transitions between binary states from repeated measurements of the signal over a time interval.
+The eye diagram amplitude and jitter are used to quantify the quality of the differential signal and identify any distortion.
+Bit error rate scans are used to characterize signal integrity across e-links.
+Cross talk effects from channels within an e-link bundle (internal) and from multiple bundles (external) are studied.
 
 % ==================
 % E-link performance
 % ==================
 
-The readout of the RD53A chip across e-links is tested using an FC7, as shown in figure~\ref{fig:tap0_vs_length}.
-E-links of two gauges (34 and 36 AWG) and different lengths (from 0.35 to 2.0 meters) are used to readout the RD53A chip.
-Bit error rates are determined using a pseudorandom bitstream (PRBS).
-The RD53 signal amplitude is varied using the TAP0 setting.
+Furthermore, in one system test of the e-links, an RD53 chip on a Single Chip Card (SCC) is read out over e-links using an FC7 mezzanine card~\cite{ref:fc7}, as shown in \fig~\ref{fig:tap0_vs_length}.
+% Bit error rates are measured using the RD53 chip, and different signal amplitudes for the RD53 are tested to quantify the effect on the error rate.
+% The readout of the RD53 chip across e-links is tested using an FC7 mezzanine card, as shown in \fig~\ref{fig:tap0_vs_length}.
+E-links of two gauges (34 and 36 AWG) and different lengths (from 0.35 to 2.0 meters) are used in the readout chain.
+Bit error rates are determined using a pseudorandom binary sequence (PRBS) that is sent from the RD53 chip to the FC7 mezzanine card.
+The amplitude of the PRBS signal is varied using the ``TAP0'' pre-emphasis digital-to-analog converter (DAC) setting, which ranges from 0 to 1000 and controls the amplitude of the signal output by the current mode logic (CML) driver on the RD53 chip.
+For this test, the amplitude is increased until the bit error rate of $10^{-11}$ is reached.
 Longer e-links require a larger signal amplitude to maintain a given bit error rate.
+% In this case the bit error rate of $10^{-11}$ is required, and the amplitude is increased until this error rate is reached.
 Good performance is seen for e-links up to 2.0 meters.
 
 \begin{figure}[htbp]
@@ -205,14 +203,14 @@ Good performance is seen for e-links up to 2.0 meters.
 \caption{
 \label{fig:tap0_vs_length}
 Measurement of signal amplitude (set by TAP0) for electrical links as a function of e-link length for 34 and 36 AWG e-links.
-In the hardware setup (left), an FC7 is connected to an SCC through two commercial display port cables, an adapter board, and an e-link for control and readout communication of an RD53A chip.
-The measurements (right) show the TAP0 setting to achieve a bit error rate of $10^{-11}$ errors per second for e-links of different lengths.
+In the hardware setup (left), an FC7 mezzanine card is connected to an SCC through two commercial display port cables, an adapter board, and an e-link for control and readout of an RD53 chip.
+The measurements (right) show the TAP0 setting to achieve a bit error rate of $10^{-11}$ for e-links of different lengths and gauges.
 }
 \end{figure}
 
 % Crosstalk measurements
 
-An external crosstalk measurement was performed, and the results are shown in figure~\ref{fig:external_crosstalk}.
+An external crosstalk measurement was performed, and the results are shown in \fig~\ref{fig:external_crosstalk}.
 To mitigate the effect of external crosstalk from a large aggressor amplitude, the victim amplitude set by TAP0 only requires a small increase.
 Thus, external crosstalk from the single aggressor e-link has a small effect on readout over the victim e-link.
 
@@ -224,17 +222,23 @@ Thus, external crosstalk from the single aggressor e-link has a small effect on 
 \caption{
 \label{fig:external_crosstalk}
 Measurement of the effect of external crosstalk on data transmission.
-Two e-links (1.4 meters, 36 AWG) are twisted together (left), with a victim e-link connected between an FC7 and SCC to readout from an RD53A chip, and an aggressor e-link connected to a KC705.
+Two e-links (1.4 meters, 36 AWG) are twisted together (left), with a victim e-link connected between an FC7 mezzanine card and SCC to read from an RD53 chip, and an aggressor e-link connected to a KC705.
 The KC705 sends PRBS signals on four e-link channels on the aggressor at different amplitudes.
 }
 \end{figure}
 
+Radiation testing was performed to determine if e-links can maintain performance after receiving up to 1500 \mrad, which surpasses the total dose expected during their use in CMS.
+Two different epoxies, Araldite 2011~(Ref.~\cite{ref:araldite}) and UR6060~(Ref.~\cite{ref:ur}), were used for e-links that underwent radiation testing.
+For doses up to 1300 \mrad, the Araldite 2011 epoxy showed significant darkening, while the UR6060 epoxy remained clear and transparent.
+The signal integrity on e-links remained good after radiation doses, and UR6060 is chosen as the epoxy used for e-link production.
+The polyimide braiding used for lashing becomes brittle after 1900 \mrad, but this should not effect the electrical readout.
+
 \section{Portcards with Optical Links}
 \label{sec:optical}
 
-The portcards play an important role in the readout chain in converting electrical signals from on detector ROCs to optical signals for off detector DTC boards.
-The portcard design and a photo of a prototype portcard are shown in figure~\ref{fig:port_card}.
-Dedicated setups with the portcards reading out single ROC cards with short coaxial cables have been used to test the prototype portcard and validate the optical part of the readout chain.
+The portcards play an important role in the readout chain in converting electrical signals from on-detector readout chips to optical signals for off-detector DTC boards.
+The portcard design and a photo of a prototype portcard are shown in \fig~\ref{fig:port_card}.
+Dedicated setups with the portcards reading out SCCs with short coaxial cables have been used to test the prototype portcard and validate the optical part of the readout chain.
 
 \begin{figure}[htbp]
 \centering
@@ -244,7 +248,7 @@ Dedicated setups with the portcards reading out single ROC cards with short coax
 \caption{
 \label{fig:port_card}
 Portcard design (left) and prototype (right).
-The portcard has three lpGBT and three \vtrxp, which are used to convert high bandwidth electric signals to optical signals.
+The portcard has three lpGBT and three \vtrxp modules, which are used to convert high bandwidth electric signals to optical signals.
 }
 \end{figure}
 
@@ -253,32 +257,38 @@ The portcard has three lpGBT and three \vtrxp, which are used to convert high ba
 The optical links have been characterized by various measurements.
 In one measurement, the high-speed input to the lpGBT is compared to a 5-bit adjustable constant voltage by a comparator sampled with a phase interpolated clock.
 Transitions of the comparator are counted; within the eye the output should toggle, but above or below the eye, no transitions are expected.
-The data from this measurement are shown in figure~\ref{fig:lpgbt_eye}.
+The data from this measurement are shown in \fig~\ref{fig:lpgbt_eye}.
 The high toggle count region is large, corresponding to a large eye diagram and a strong optical signal.
 
 % TODO: Discuss other optical link measurements
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.8\textwidth,origin=c]{../figures/lpGBT_eye.pdf}
+\includegraphics[width=1.0\textwidth,origin=c]{../figures/lpGBT_eye.pdf}
 \caption{
 \label{fig:lpgbt_eye}
-Eye opening monitor from an lpGBT for the 2.56 Gbps optical down link.
-The plot shows the height of the eye as a function of sampling phase.
-The color scale shows the number of transitions.
-The region with high toggle count corresponds to the eye opening.
-Equalization parameters are at default settings.
+Eye opening monitor from an lpGBT for the 2.56 Gbps optical down link with equalization parameters at default settings.
+% The plot shows the height of the eye as a function of sampling phase.
+The vertical axis is a 5-bit encoded digital-to-analog converter (DAC) value that corresponds to the constant voltage that the high-speed signal is compared with.
+The horizontal axis is a 6-bit encoded DAC value that governs the sampling phase used for this comparison.
+The color scale shows the number of transitions, which is the toggle count.
+Regions with high toggle count correspond to the eye opening, while regions with low toggle count are outside the eye opening.
 }
 \end{figure}
 
 % Electrical Link Measurements
 
 The electrical link receivers on the lpGBT are being studied.
-In one measurement, the signal source is a PRBS7 generator in the RD53A readout chip.
-This signal sent over a commercial display port cable, an adapter board, and a Molex FPC cable (ref.~\cite{ref:molex_cable}) to be received by an lpGBT.
+In one measurement, the signal source is a PRBS7 generator in the RD53 readout chip.
+This signal is sent over a commercial display port cable, an adapter board, and a Molex FPC cable (Ref.~\cite{ref:molex_cable}) to be received by an lpGBT.
 The signal is compared to an internal error checker on the lpGBT.
-The bit-error rate is measured as a function of clock sampling phase and equalization setting, and the results are provided in figure~\ref{fig:lpgbt_bert}.
-The phase at the eye crossing is clearly seen, demonstrating the quality of the electrical signal.
+The bit-error rate is measured as a function of clock sampling phase and equalization setting, and the results are provided in \fig~\ref{fig:lpgbt_bert}.
+% The phase at the eye crossing is clearly seen, demonstrating the quality of the electrical signal.
+The region with a bit error rate of $9.3 * 10^{-10}$ corresponds to zero errors for the total number of bits checked.
+The phases with zero errors are those where the eye diagram is open.
+The equalizer on the lpGBT reduces jitter and the bit error rate by processing the high-speed signal to minimize Inter-Symbol-Interferance~\cite{ref:lpgbt_2}.
+Changing the equalization setting has only a small effect on the timing.
+Low error rates on the lpGBT electrical link receivers are achieved by tuning the sampling phase.
 
 % TODO: Discuss other electrical link measurements
 
@@ -287,9 +297,10 @@ The phase at the eye crossing is clearly seen, demonstrating the quality of the 
 \includegraphics[width=1.0\textwidth,origin=c]{../figures/lpGBT_bert.png}
 \caption{
 \label{fig:lpgbt_bert}
-Scan of bit-error rate vs. clock sampling phase and equalization setting for e-port receivers on the lpGBT driven by the RD53A pixel readout chip.
+Scan of bit-error rate vs. clock sampling phase and equalization setting for electrical port receivers on the lpGBT driven by the RD53 pixel readout chip.
+The number of bits checked at each setting is $1.07 * 10^{9}$.
 Points in green have zero observed errors and report the reciprocal of the number of bits checked.
-Equalization settings affect the timing slightly.
+% Equalization settings affect the timing slightly.
 }
 \end{figure}
 
@@ -297,10 +308,10 @@ Equalization settings affect the timing slightly.
 \label{sec:conclusion}
 
 The data readout chain is an important part of the CMS Phase-2 pixel upgrade.
-Various system tests have been performed to characterize the electrical and optical links that form the readout chain.
-Electrical links can provide stable links at the required lengths, and crosstalk has a small effect on signal quality.
+Various system tests have been performed to characterize the electrical and optical links forming the readout chain.
+Electrical links can provide stable connectivity at the required lengths, and crosstalk has a small effect on signal quality.
 Conversion from electrical to optical links is working well, and the optical links have good performance.
-These results will inform the final design, production, and testing of components for the pixel detector readout chain.
+These results form an important input to the final design, production, and testing of components for the pixel detector readout chain.
 
 % Appendices
 % \appendix
@@ -423,9 +434,15 @@ Journal of Instrumentation (2017).
 % Conference: TWEPP
 % Year: 2019
 
-\bibitem{ref:lpgbt}
+\bibitem{ref:lpgbt_1}
 P. Moreira, et al., \emph{The lpGBT: A radiation tolerant ASIC for Data, Timing, Trigger and Control Applications in HL-LHC},
 Proceedings on the Topical Workshop on Electronics for Particle Physics, TWEPP 2019.
+
+% lpGBT documentation
+% https://twiki.nevis.columbia.edu/twiki/pub/ATLAS/SliceTestboard/lpGBT.pdf
+
+\bibitem{ref:lpgbt_2}
+\url{https://twiki.nevis.columbia.edu/twiki/pub/ATLAS/SliceTestboard/lpGBT.pdf}.
 
 % Araldite 2011 is from the Huntsman Corporation.
 % https://www.huntsman.com/products/araldite2000/araldite-2011
@@ -439,7 +456,7 @@ Proceedings on the Topical Workshop on Electronics for Particle Physics, TWEPP 2
 \bibitem{ref:ur}
 \url{https://www.ellsworth.com/products/encapsulants/polyurethane/resinlab-ur6060-polyurethane-encapsulant-clear-50-ml-cartridge}.
 
-% FC7
+% FC7 mezzanine card
 \bibitem{ref:fc7}
 \url{https://espace.cern.ch/project-FC7/SitePages/Home.aspx}.
 
