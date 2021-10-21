@@ -99,7 +99,7 @@ An overview of the data readout chain for the inner tracker is shown in \fig~\re
 High bandwidth electrical and optical links are used to establish control and data links between pixel modules on the CMS detector and Data Trigger Control (DTC) boards in the counting room.
 Low-mass electronic links (e-links) up to 1.6 meters long provide 160 Mbps control links (downlinks) and 1.28 Gbps data links (uplinks) between pixel modules and portcards.
 Optical fibers connect portcards, which are mounted on the support structure inside the detector, to DTC boards in the counting room to establish 2.5 Gbps control links (downlinks) and 10 Gbps data links (uplinks).
-The portcards each carry three Low-Power Gigabit Transceivers (lpGBT) and three Versatile Link PLUS Transceiver (\vtrxp) modules~\cite{ref:lpgbt,ref:vtrxp}.
+The portcards each carry three Low-Power Gigabit Transceivers (lpGBT) and three Versatile Link PLUS Transceiver (\vtrxp) modules~\cite{ref:lpgbt_1,ref:vtrxp}.
 The lpGBTs convert optical signals to electrical signals (and vice versa), and the \vtrxp\space modules establish optical links with the DTC boards.
 
 \begin{figure}[htbp]
@@ -284,6 +284,7 @@ The bit-error rate is measured as a function of clock sampling phase and equaliz
 % The phase at the eye crossing is clearly seen, demonstrating the quality of the electrical signal.
 The region with a bit error rate of $9.3 * 10^{-10}$ corresponds to zero errors for the total number of bits checked.
 The phases with zero errors are those where the eye diagram is open.
+The equalizer on the lpGBT reduces jitter and the bit error rate by processing the high-speed signal to minimize Inter-Symbol-Interferance~\cite{ref:lpgbt_2}.
 Changing the equalization setting has only a small effect on the timing.
 Low error rates on the lpGBT electrical link receivers are achieved by tuning the sampling phase.
 
@@ -294,7 +295,7 @@ Low error rates on the lpGBT electrical link receivers are achieved by tuning th
 \includegraphics[width=1.0\textwidth,origin=c]{../figures/lpGBT_bert.png}
 \caption{
 \label{fig:lpgbt_bert}
-Scan of bit-error rate vs. clock sampling phase and equalization setting for electrical link receivers on the lpGBT driven by the RD53 pixel readout chip.
+Scan of bit-error rate vs. clock sampling phase and equalization setting for electrical port receivers on the lpGBT driven by the RD53 pixel readout chip.
 The number of bits checked at each setting is $1.07 * 10^{9}$.
 Points in green have zero observed errors and report the reciprocal of the number of bits checked.
 % Equalization settings affect the timing slightly.
@@ -431,9 +432,15 @@ Journal of Instrumentation (2017).
 % Conference: TWEPP
 % Year: 2019
 
-\bibitem{ref:lpgbt}
+\bibitem{ref:lpgbt_1}
 P. Moreira, et al., \emph{The lpGBT: A radiation tolerant ASIC for Data, Timing, Trigger and Control Applications in HL-LHC},
 Proceedings on the Topical Workshop on Electronics for Particle Physics, TWEPP 2019.
+
+% lpGBT documentation
+% https://twiki.nevis.columbia.edu/twiki/pub/ATLAS/SliceTestboard/lpGBT.pdf
+
+\bibitem{ref:lpgbt_2}
+\url{https://twiki.nevis.columbia.edu/twiki/pub/ATLAS/SliceTestboard/lpGBT.pdf}.
 
 % Araldite 2011 is from the Huntsman Corporation.
 % https://www.huntsman.com/products/araldite2000/araldite-2011
