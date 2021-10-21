@@ -181,13 +181,15 @@ Cross talk effects from channels within an e-link bundle (internal) and from mul
 % E-link performance
 % ==================
 
-Furthermore, the RD53 chip on a Single Chip Card (SCC) is read out over e-links using an FC7 mezzanine card~\cite{ref:fc7}, as shown in \fig~\ref{fig:tap0_vs_length}.
+Furthermore, in one system test of the e-links, an RD53 chip on a Single Chip Card (SCC) is read out over e-links using an FC7 mezzanine card~\cite{ref:fc7}, as shown in \fig~\ref{fig:tap0_vs_length}.
 % Bit error rates are measured using the RD53 chip, and different signal amplitudes for the RD53 are tested to quantify the effect on the error rate.
 % The readout of the RD53 chip across e-links is tested using an FC7 mezzanine card, as shown in \fig~\ref{fig:tap0_vs_length}.
 E-links of two gauges (34 and 36 AWG) and different lengths (from 0.35 to 2.0 meters) are used in the readout chain.
 Bit error rates are determined using a pseudorandom binary sequence (PRBS) that is sent from the RD53 chip to the FC7 mezzanine card.
 The amplitude of the PRBS signal is varied using the ``TAP0'' pre-emphasis digital-to-analog converter (DAC) setting, which ranges from 0 to 1000 and controls the amplitude of the signal output by the current mode logic (CML) driver on the RD53 chip.
+For this test, the amplitude is increased until the bit error rate of $10^{-11}$ is reached.
 Longer e-links require a larger signal amplitude to maintain a given bit error rate.
+% In this case the bit error rate of $10^{-11}$ is required, and the amplitude is increased until this error rate is reached.
 Good performance is seen for e-links up to 2.0 meters.
 
 \begin{figure}[htbp]
@@ -202,7 +204,7 @@ Good performance is seen for e-links up to 2.0 meters.
 \label{fig:tap0_vs_length}
 Measurement of signal amplitude (set by TAP0) for electrical links as a function of e-link length for 34 and 36 AWG e-links.
 In the hardware setup (left), an FC7 mezzanine card is connected to an SCC through two commercial display port cables, an adapter board, and an e-link for control and readout of an RD53 chip.
-The measurements (right) show the TAP0 setting to achieve a bit error rate of $10^{-11}$ for e-links of different lengths.
+The measurements (right) show the TAP0 setting to achieve a bit error rate of $10^{-11}$ for e-links of different lengths and gauges.
 }
 \end{figure}
 
@@ -234,7 +236,7 @@ The polyimide braiding used for lashing becomes brittle after 1900 \mrad, but th
 \section{Portcards with Optical Links}
 \label{sec:optical}
 
-The portcards play an important role in the readout chain in converting electrical signals from on detector readout chips to optical signals for off detector DTC boards.
+The portcards play an important role in the readout chain in converting electrical signals from on-detector readout chips to optical signals for off-detector DTC boards.
 The portcard design and a photo of a prototype portcard are shown in \fig~\ref{fig:port_card}.
 Dedicated setups with the portcards reading out SCCs with short coaxial cables have been used to test the prototype portcard and validate the optical part of the readout chain.
 
