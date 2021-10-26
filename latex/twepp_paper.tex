@@ -13,7 +13,7 @@
 \newcommand{\mrad}{Mrad}
 \newcommand{\fig}{Figure}
 
-\linenumbers
+% \linenumbers
 
 \title{Development of a high bandwidth readout chain for the CMS Phase-2 pixel upgrade}
 
@@ -82,7 +82,7 @@ The development and the characterization of these components is presented along 
 \section{Introduction}
 \label{sec:introduction}
 
-The High-Luminosity LHC (HL-LHC) will provide CMS with a peak instantaneous luminosity of $7.5 \times 10^{34} \mathrm{cm}^{-2} \mathrm{s}^{-1}$.
+The High-Luminosity LHC (HL-LHC)~\cite{ref:hllhc} will provide CMS experiment~\cite{ref:cms} with a peak instantaneous luminosity of $7.5 \times 10^{34} \mathrm{cm}^{-2} \mathrm{s}^{-1}$.
 Compared to the LHC, the HL-LHC will have up to 200 proton-proton collisions (pileup) per event and will result in a higher radiation fluence.
 To prepare for this data taking environment, the CMS Tracker will be fully replaced in the Phase-2 upgrade~\cite{ref:tdr,ref:orfanelli}.
 
@@ -99,7 +99,7 @@ An overview of the data readout chain for the inner tracker is shown in \fig~\re
 High bandwidth electrical and optical links are used to establish control and data links between pixel modules on the CMS detector and Data Trigger Control (DTC) boards in the counting room.
 Low-mass electronic links (e-links) up to 1.6 meters long provide 160 Mbps control links (downlinks) and 1.28 Gbps data links (uplinks) between pixel modules and portcards.
 Optical fibers connect portcards, which are mounted on the support structure inside the detector, to DTC boards in the counting room to establish 2.5 Gbps control links (downlinks) and 10 Gbps data links (uplinks).
-The portcards each carry three Low-Power Gigabit Transceivers (lpGBT) and three Versatile Link PLUS Transceiver (\vtrxp) modules~\cite{ref:lpgbt_1,ref:vtrxp}.
+The portcards each carry three Low-Power Gigabit Transceivers (lpGBT)~\cite{ref:lpgbt_1} and three Versatile Link PLUS Transceiver (\vtrxp) modules~\cite{ref:vtrxp}.
 The lpGBTs convert optical signals to electrical signals (and vice versa), and the \vtrxp\space modules establish optical links with the DTC boards.
 
 \begin{figure}[htbp]
@@ -346,6 +346,36 @@ The author would like to thank the National Science Foundation for funding this 
 % accessory text in footnotes.
 
 % Also, please have only one work for each \bibitem.
+
+% CMS experiment Ref.
+% CMS Collaboration, The CMS experiment at the CERN LHC,
+% JINST 3 (2008) S08004, doi:10.1088/1748-0221/3/08/S08004
+
+\bibitem{ref:cms}
+CMS Collaboration, \emph{The CMS experiment at the CERN LHC},
+JINST 3 (2008) S08004.
+
+% HL-LHC Ref.
+% @article{Apollinari:2120673,
+%       author        = "Apollinari, G. and Brüning, O. and Nakamoto, T. and
+%                        Rossi, Lucio",
+%       title         = "{Chapter 1: High Luminosity Large Hadron Collider HL-LHC.
+%                        High Luminosity Large Hadron Collider HL-LHC}",
+%       journal       = "CERN Yellow Report",
+%       archivePrefix = "arXiv",
+%       eprint        = "1705.08830",
+%       reportNumber  = "FERMILAB-PUB-15-699-TD, 5",
+%       pages         = "1-19. 21 p",
+%       month         = "May",
+%       year          = "2017",
+%       url           = "https://cds.cern.ch/record/2120673",
+%       note          = "21 pages, chapter in High-Luminosity Large Hadron Collider
+%                        (HL-LHC) : Preliminary Design Report",
+%       doi           = "10.5170/CERN-2015-005.1",
+% }
+
+\bibitem{ref:hllhc}
+CERN Yellow Report CERN-2015-005, pp.1-19.
 
 % TDR Ref.
 %
