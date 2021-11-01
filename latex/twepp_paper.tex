@@ -80,7 +80,7 @@ The lpGBTs convert optical signals to electrical signals (and vice versa), and t
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=1.0\textwidth,origin=c]{../figures/IT_System_Readout_2-crop.pdf}
+\includegraphics[width=0.8\textwidth,origin=c]{../figures/IT_System_Readout_2-crop.pdf}
 \caption{
 \label{fig:readout}
 System readout architecture for the inner tracker~\cite{ref:orfanelli}. Pixel modules communicate with portcards through e-links. Portcards communicate with Data Trigger Control (DTC) boards through optical links.
@@ -103,7 +103,7 @@ To improve durability and handling, the soldered wires are secured with a non-co
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.6\textwidth,origin=c]{../figures/e-link-1.jpg}
+\includegraphics[width=0.5\textwidth,origin=c]{../figures/e-link-1.jpg}
 \caption{
 \label{fig:elink}
 One end of a twisted pair electrical link (e-link).
@@ -151,11 +151,12 @@ An external crosstalk measurement was performed, and the results are shown in \f
 To mitigate the effect of external crosstalk from a large aggressor amplitude, the victim amplitude set by TAP0 only requires a small increase.
 Thus, external crosstalk from the single aggressor e-link has a small effect on readout over the victim e-link.
 
+% use raisebox to adjust vertical spacing
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.50\textwidth,origin=c,angle=270]{../figures/external_crosstalk_setup.jpg}
-\qquad
-\includegraphics[width=0.46\textwidth,origin=c]{../figures/BERT_TAP0_Scan_External_Crosstalk-crop.pdf}
+\raisebox{-0.4\height}{\includegraphics[height=2.0in,origin=c,angle=270]{../figures/external_crosstalk_setup.jpg}}
+\hspace*{.2in}
+\raisebox{-0.5\height}{\includegraphics[height=2.75in,origin=c]{../figures/BERT_TAP0_Scan_External_Crosstalk-crop.pdf}}
 \caption{
 \label{fig:external_crosstalk}
 Measurement of the effect of external crosstalk on data transmission.
@@ -179,9 +180,9 @@ Dedicated setups with the portcards reading out SCCs with short coaxial cables h
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.45\textwidth,origin=c]{../figures/port_card_design.png}
+\raisebox{-0.5\height}{\includegraphics[width=0.45\textwidth,origin=c]{../figures/port_card_design.png}}
 \qquad
-\includegraphics[width=0.45\textwidth,origin=c]{../figures/port_card_back.jpeg}
+\raisebox{-0.5\height}{\includegraphics[width=0.45\textwidth,origin=c]{../figures/port_card_back.jpeg}}
 \caption{
 \label{fig:port_card}
 Portcard design (left) and prototype (right).
@@ -199,7 +200,7 @@ The high toggle count region is large, corresponding to a large eye diagram and 
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=1.0\textwidth,origin=c]{../figures/lpGBT_eye.pdf}
+\includegraphics[width=0.8\textwidth,origin=c]{../figures/lpGBT_eye.pdf}
 \caption{
 \label{fig:lpgbt_eye}
 Eye opening monitor from an lpGBT for the 2.56 Gbps optical down link with equalization parameters at default settings.
