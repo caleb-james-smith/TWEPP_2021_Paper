@@ -21,26 +21,6 @@
 \author{C. Smith}
 \affiliation{The University of Kansas,\\Lawrence, Kansas 66045, USA}
 
-% \affiliation{The University of Kansas\\1251 Wescoe Hall Dr.\\Lawrence, KS 66045, United States}
-
-% From CMS publication:
-% The University of Kansas, Lawrence, Kansas 66045, USA
-% From KU physics website:
-% The University of Kansas, 1251 Wescoe Hall Dr. Lawrence, KS 66045, United States
-
-% more complex case: 4 authors, 3 institutions, 2 footnotes
-% \author[a,b,1]{F. Irst,\note{Corresponding author.}}
-% \author[c]{S. Econd,}
-% \author[a,2]{T. Hird\note{Also at Some University.}}
-% \author[c,2]{and Fourth}
-
-% The "\note" macro will give a warning: "Ignoring empty anchor..."
-% you can safely ignore it.
-
-% \affiliation[a]{One University,\\some-street, Country}
-% \affiliation[b]{Another University,\\different-address, Country}
-% \affiliation[c]{A School for Advanced Studies,\\some-location, Country}
-
 % e-mail addresses: only for the corresponding author
 \emailAdd{caleb.smith@ku.edu}
 
@@ -58,11 +38,7 @@ The development and the characterization of these components is presented along 
 
 % \arxivnumber{1234.56789} % only if you have one
 
-% \collaboration{\includegraphics[height=17mm]{example-image}\\[6pt]
-%   XXX collaboration}
-% or
 \collaboration[c]{on behalf of the CMS tracker collaboration}
-
 
 % if you write for a special issue this may be useful
 \proceeding{Topical Workshop on Electronics for Particle Physics\\
@@ -118,35 +94,6 @@ System readout architecture for the inner tracker~\cite{ref:orfanelli}. Pixel mo
 % E-link design
 % =============
 
-% Describe e-link design and reasons for design choices.
-
-% Info
-%
-% Each wire has a 36 AWG copper core (127 microns in diameter) surrounded by a polyimide coating for insolation (45 micron thickness); the total diameter is 217 microns.
-%
-% Polyimide braiding is used to lash twisted pairs in a bundle to provide durability and prevent wire kinks.
-%
-% Different epoxies tested: Araldite 2011 and UR6060.
-% Final epoxy used: UR6060.
-%
-% Different gauges tested: 34 and 36 AWG.
-% Final gauge used: 36 AWG.
-%
-% Different twists per inch tested: 3, 4, 6, 8, 16, 24.
-% Final twists per inch used: 4.
-
-% old
-
-% The electrical links are created using low mass, small diameter twisted pairs.
-% One end of a twisted pair electrical link (e-link) is shown in \fig~\ref{fig:elink}.
-% Five twisted pair channels (one for a control link and four for data links) are lashed together in a bundle using a polyimide braiding.
-% The lashing provides durability and prevents wire kinks.
-% Each twisted pair has two wires that are twisted together with 4 twists per inch.
-% On each end of an e-link, wires are soldered to a paddle board, and a nonconductive epoxy is applied to secure the wires.
-% Each wire has a 36 AWG copper core (127 microns in diameter) surrounded by a polyimide coating for insolation (45 micron thickness); the total diameter is 217 microns.
-
-% new
-
 The electrical links (e-links) are created using low mass, small diameter twisted pair cables.
 One end of a twisted pair electrical link is shown in \fig~\ref{fig:elink}.
 E-link bundles are made to connect to modules and provide each module with one control link twisted pair and multiple data link twisted pairs.
@@ -167,10 +114,6 @@ One end of a twisted pair electrical link (e-link).
 % E-link testing
 % ==============
 
-% TODO: expand description of tests
-
-% The tests performed on e-links are continuity, visual inspection, mass measurement, DC resistance, differential eye diagram, bit error rate tests (BERT), impedance measurements, cross talk, thermal cycling, and radiation.
-
 The prototype low-mass electrical links are developed and characterized with a series of measurements.
 The signal quality is assessed using eye diagrams, which overlay transitions between binary states from repeated measurements of the signal over a time interval.
 The eye diagram amplitude and jitter are used to quantify the quality of the differential signal and identify any distortion.
@@ -182,21 +125,15 @@ Cross talk effects from channels within an e-link bundle (internal) and from mul
 % ==================
 
 Furthermore, in one system test of the e-links, an RD53 chip on a Single Chip Card (SCC) is read out over e-links using an FC7 mezzanine card~\cite{ref:fc7}, as shown in \fig~\ref{fig:tap0_vs_length}.
-% Bit error rates are measured using the RD53 chip, and different signal amplitudes for the RD53 are tested to quantify the effect on the error rate.
-% The readout of the RD53 chip across e-links is tested using an FC7 mezzanine card, as shown in \fig~\ref{fig:tap0_vs_length}.
 E-links of two gauges (34 and 36 AWG) and different lengths (from 0.35 to 2.0 meters) are used in the readout chain.
 Bit error rates are determined using a pseudorandom binary sequence (PRBS) that is sent from the RD53 chip to the FC7 mezzanine card.
 The amplitude of the PRBS signal is varied using the ``TAP0'' pre-emphasis digital-to-analog converter (DAC) setting, which ranges from 0 to 1000 and controls the amplitude of the signal output by the current mode logic (CML) driver on the RD53 chip.
 For this test, the amplitude is increased until the bit error rate of $10^{-11}$ is reached.
 Longer e-links require a larger signal amplitude to maintain a given bit error rate.
-% In this case the bit error rate of $10^{-11}$ is required, and the amplitude is increased until this error rate is reached.
 Good performance is seen for e-links up to 2.0 meters.
 
 \begin{figure}[htbp]
 \centering
-% $\vcenter{\includegraphics[height=2cm]{../figures/fc7_elink_scc_setup.jpg}}$
-% \hspace{1mm}
-% $\vcenter{\includegraphics[height=2cm]{../figures/BERT_TAP0_vs_Length-crop.pdf}}$
 \includegraphics[width=0.50\textwidth,origin=c]{../figures/fc7_elink_scc_setup.jpg}
 \qquad
 \includegraphics[width=0.40\textwidth,origin=c]{../figures/BERT_TAP0_vs_Length-crop.pdf}
@@ -260,15 +197,12 @@ Transitions of the comparator are counted; within the eye the output should togg
 The data from this measurement are shown in \fig~\ref{fig:lpgbt_eye}.
 The high toggle count region is large, corresponding to a large eye diagram and a strong optical signal.
 
-% TODO: Discuss other optical link measurements
-
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=1.0\textwidth,origin=c]{../figures/lpGBT_eye.pdf}
 \caption{
 \label{fig:lpgbt_eye}
 Eye opening monitor from an lpGBT for the 2.56 Gbps optical down link with equalization parameters at default settings.
-% The plot shows the height of the eye as a function of sampling phase.
 The vertical axis is a 5-bit encoded digital-to-analog converter (DAC) value that corresponds to the constant voltage that the high-speed signal is compared with.
 The horizontal axis is a 6-bit encoded DAC value that governs the sampling phase used for this comparison.
 The color scale shows the number of transitions, which is the toggle count.
@@ -283,14 +217,11 @@ In one measurement, the signal source is a PRBS7 generator in the RD53 readout c
 This signal is sent over a commercial display port cable, an adapter board, and a Molex FPC cable (Ref.~\cite{ref:molex_cable}) to be received by an lpGBT.
 The signal is compared to an internal error checker on the lpGBT.
 The bit-error rate is measured as a function of clock sampling phase and equalization setting, and the results are provided in \fig~\ref{fig:lpgbt_bert}.
-% The phase at the eye crossing is clearly seen, demonstrating the quality of the electrical signal.
 The region with a bit error rate of $9.3 * 10^{-10}$ corresponds to zero errors for the total number of bits checked.
 The phases with zero errors are those where the eye diagram is open.
 The equalizer on the lpGBT reduces jitter and the bit error rate by processing the high-speed signal to minimize Inter-Symbol-Interferance~\cite{ref:lpgbt_2}.
 Changing the equalization setting has only a small effect on the timing.
 Low error rates on the lpGBT electrical link receivers are achieved by tuning the sampling phase.
-
-% TODO: Discuss other electrical link measurements
 
 \begin{figure}[htbp]
 \centering
@@ -300,7 +231,6 @@ Low error rates on the lpGBT electrical link receivers are achieved by tuning th
 Scan of bit-error rate vs. clock sampling phase and equalization setting for electrical port receivers on the lpGBT driven by the RD53 pixel readout chip.
 The number of bits checked at each setting is $1.07 * 10^{9}$.
 Points in green have zero observed errors and report the reciprocal of the number of bits checked.
-% Equalization settings affect the timing slightly.
 }
 \end{figure}
 
@@ -312,11 +242,6 @@ Various system tests have been performed to characterize the electrical and opti
 Electrical links can provide stable connectivity at the required lengths, and crosstalk has a small effect on signal quality.
 Conversion from electrical to optical links is working well, and the optical links have good performance.
 These results form an important input to the final design, production, and testing of components for the pixel detector readout chain.
-
-% Appendices
-% \appendix
-% \section{Example appendix title}
-% Here is this appendix.
 
 \acknowledgments
 
