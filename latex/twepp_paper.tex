@@ -58,15 +58,17 @@ The development and the characterization of these components is presented along 
 \section{Introduction}
 \label{sec:introduction}
 
-The High-Luminosity LHC (HL-LHC)~\cite{ref:hllhc} will provide CMS experiment~\cite{ref:cms} with a peak instantaneous luminosity of $7.5 \times 10^{34} \mathrm{cm}^{-2} \mathrm{s}^{-1}$.
-Compared to the LHC, the HL-LHC will have up to 200 proton-proton collisions (pileup) per event and will result in a higher radiation fluence.
-To prepare for this data taking environment, the CMS Tracker will be fully replaced in the Phase-2 upgrade~\cite{ref:tdr,ref:orfanelli}.
+% The High-Luminosity LHC (HL-LHC)~\cite{ref:hllhc} will provide CMS experiment~\cite{ref:cms} with a peak instantaneous luminosity of $7.5 \times 10^{34} \mathrm{cm}^{-2} \mathrm{s}^{-1}$.
+% Compared to the LHC, the HL-LHC will have up to 200 proton-proton collisions (pileup) per event and will result in a higher radiation fluence.
+% To prepare for this data taking environment, the CMS Tracker will be fully replaced in the Phase-2 upgrade~\cite{ref:tdr,ref:orfanelli}.
 
-The new inner tracker will have about two billion silicon pixels installed.
-The detector will be built using hybrid pixel modules that process sensor data using a custom readout chip initially developed by the RD53 collaboration~\cite{ref:rd53}.
+In preparation for the High-Luminosity LHC (HL-LHC)~\cite{ref:hllhc}, the CMS Tracker will be fully replaced in the Phase-2 upgrade~\cite{ref:cms,ref:tdr,ref:orfanelli}.
+The new inner tracker will have about two billion silicon pixels installed,
+and hybrid pixel modules will process sensor data using a custom readout chip initially developed by the RD53 collaboration~\cite{ref:rd53}.
+% The detector will be built using hybrid pixel modules that process sensor data using a custom readout chip initially developed by the RD53 collaboration~\cite{ref:rd53}.
 Each readout chip on the detector needs a control link to receive trigger, clock, commands, and settings from off-detector electronics as well as data links to send pixel data to off-detector electronics.
 The high bandwidth control and data links are split into two stages: electrical links and optical links.
-System tests of electrical and optical links are presented.
+System tests of these electrical and optical links are presented.
 
 \section{Data Readout Chain}
 \label{sec:readout}
@@ -98,12 +100,12 @@ The electrical links (e-links) are created using low mass, small diameter twiste
 One end of a twisted pair electrical link is shown in \fig~\ref{fig:elink}.
 E-link bundles are made to connect to modules and provide each module with one control link twisted pair and multiple data link twisted pairs.
 Each twisted pair is produced using two 36 American Wire Gauge (AWG) copper core (127 microns in diameter) wires surrounded by polyimide insulation (45 microns thick) that are twisted together with 4 twists per inch.
-The pairs are soldered to small, 20 micron thick PCBs that can plug into Molex connectors with 300 micron pitch~\cite{ref:molex17,ref:molex33,ref:molex45}.
+The pairs are soldered to small, 20 micron thick PCBs that can plug into Molex connectors with 300 micron pitch~\cite{ref:molex33,ref:molex45}.
 To improve durability and handling, the soldered wires are secured with a non-conductive epoxy, and then the bundle is lashed together using polyimide braiding.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.5\textwidth,origin=c]{../figures/e-link-1.jpg}
+\includegraphics[width=0.4\textwidth,origin=c]{../figures/e-link-1.jpg}
 \caption{
 \label{fig:elink}
 One end of a twisted pair electrical link (e-link).
@@ -114,9 +116,9 @@ One end of a twisted pair electrical link (e-link).
 % E-link testing
 % ==============
 
-The prototype low-mass electrical links are developed and characterized with a series of measurements.
+Prototype low-mass electrical links are developed and characterized with a series of measurements.
 The signal quality is assessed using eye diagrams, which overlay transitions between binary states from repeated measurements of the signal over a time interval.
-The eye diagram amplitude and jitter are used to quantify the quality of the differential signal and identify any distortion.
+% The eye diagram amplitude and jitter are used to quantify the quality of the differential signal and identify any distortion.
 Bit error rate scans are used to characterize signal integrity across e-links.
 Cross talk effects from channels within an e-link bundle (internal) and from multiple bundles (external) are studied.
 
@@ -124,10 +126,10 @@ Cross talk effects from channels within an e-link bundle (internal) and from mul
 % E-link performance
 % ==================
 
-Furthermore, in one system test of the e-links, an RD53 chip on a Single Chip Card (SCC) is read out over e-links using an FC7 mezzanine card~\cite{ref:fc7}, as shown in \fig~\ref{fig:tap0_vs_length}.
+In one system test of the e-links, an RD53 chip on a Single Chip Card (SCC) is read out over e-links using an FC7 mezzanine card~\cite{ref:fc7}, as shown in \fig~\ref{fig:tap0_vs_length}.
 E-links of two gauges (34 and 36 AWG) and different lengths (from 0.35 to 2.0 meters) are used in the readout chain.
 Bit error rates are determined using a pseudorandom binary sequence (PRBS) that is sent from the RD53 chip to the FC7 mezzanine card.
-The amplitude of the PRBS signal is varied using the ``TAP0'' pre-emphasis digital-to-analog converter (DAC) setting, which ranges from 0 to 1000 and controls the amplitude of the signal output by the current mode logic (CML) driver on the RD53 chip.
+The amplitude of the PRBS signal is varied using the ``TAP0'' pre-emphasis digital-to-analog converter (DAC) setting, which controls the amplitude of the signal output by the current mode logic (CML) driver on the RD53 chip.
 For this test, the amplitude is increased until the bit error rate of $10^{-11}$ is reached.
 Longer e-links require a larger signal amplitude to maintain a given bit error rate.
 Good performance is seen for e-links up to 2.0 meters.
@@ -147,7 +149,7 @@ The measurements (right) show the TAP0 setting to achieve a bit error rate of $1
 
 % Crosstalk measurements
 
-An external crosstalk measurement was performed, and the results are shown in \fig~\ref{fig:external_crosstalk}.
+Furthermore, an external crosstalk measurement was performed, and the results are shown in \fig~\ref{fig:external_crosstalk}.
 To mitigate the effect of external crosstalk from a large aggressor amplitude, the victim amplitude set by TAP0 only requires a small increase.
 Thus, external crosstalk from the single aggressor e-link has a small effect on readout over the victim e-link.
 
@@ -180,13 +182,13 @@ Dedicated setups with the portcards reading out SCCs with short coaxial cables h
 
 \begin{figure}[htbp]
 \centering
-\raisebox{-0.5\height}{\includegraphics[width=0.45\textwidth,origin=c]{../figures/port_card_design.png}}
+\raisebox{-0.5\height}{\includegraphics[width=0.30\textwidth,origin=c]{../figures/port_card_design.png}}
 \qquad
-\raisebox{-0.5\height}{\includegraphics[width=0.45\textwidth,origin=c]{../figures/port_card_back.jpeg}}
+\raisebox{-0.5\height}{\includegraphics[width=0.30\textwidth,origin=c]{../figures/port_card_back.jpeg}}
 \caption{
 \label{fig:port_card}
 Portcard design (left) and prototype (right).
-The portcard has three lpGBT and three \vtrxp modules, which are used to convert high bandwidth electric signals to optical signals.
+The portcard has three lpGBT and three \vtrxp\space modules, which are used to convert high bandwidth electric signals to optical signals.
 }
 \end{figure}
 
@@ -204,7 +206,7 @@ The high toggle count region is large, corresponding to a large eye diagram and 
 \caption{
 \label{fig:lpgbt_eye}
 Eye opening monitor from an lpGBT for the 2.56 Gbps optical down link with equalization parameters at default settings.
-The vertical axis is a 5-bit encoded digital-to-analog converter (DAC) value that corresponds to the constant voltage that the high-speed signal is compared with.
+The vertical axis is a 5-bit encoded DAC value that corresponds to the constant voltage that the high-speed signal is compared with.
 The horizontal axis is a 6-bit encoded DAC value that governs the sampling phase used for this comparison.
 The color scale shows the number of transitions, which is the toggle count.
 Regions with high toggle count correspond to the eye opening, while regions with low toggle count are outside the eye opening.
@@ -430,8 +432,8 @@ Proceedings on the Topical Workshop on Electronics for Particle Physics, TWEPP 2
 % 45 position part number is 5025984593
 % https://www.molex.com/molex/products/part-detail/ffc_fpc_connectors/5025984593
 
-\bibitem{ref:molex17}
-\url{https://www.molex.com/molex/products/part-detail/ffc_fpc_connectors/5025981793}.
+% \bibitem{ref:molex17}
+% \url{https://www.molex.com/molex/products/part-detail/ffc_fpc_connectors/5025981793}.
 
 \bibitem{ref:molex33}
 \url{https://www.molex.com/molex/products/part-detail/ffc_fpc_connectors/5025983393}.
