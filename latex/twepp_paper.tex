@@ -82,7 +82,7 @@ The lpGBTs convert optical signals to electrical signals (and vice versa), and t
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.8\textwidth,origin=c]{../figures/IT_System_Readout_2-crop.pdf}
+\includegraphics[width=0.70\textwidth,origin=c]{../figures/IT_System_Readout_2-crop.pdf}
 \caption{
 \label{fig:readout}
 System readout architecture for the inner tracker~\cite{ref:orfanelli}. Pixel modules communicate with portcards through e-links. Portcards communicate with Data Trigger Control (DTC) boards through optical links.
@@ -100,7 +100,7 @@ The electrical links (e-links) are created using low mass, small diameter twiste
 One end of a twisted pair electrical link is shown in \fig~\ref{fig:elink}.
 E-link bundles are made to connect to modules and provide each module with one control link twisted pair and multiple data link twisted pairs.
 Each twisted pair is produced using two 36 American Wire Gauge (AWG) copper core (127 microns in diameter) wires surrounded by polyimide insulation (45 microns thick) that are twisted together with 4 twists per inch.
-The pairs are soldered to small, 20 micron thick PCBs that can plug into Molex connectors with 300 micron pitch~\cite{ref:molex33,ref:molex45}.
+The pairs are soldered to small, 20 micron thick PCBs that can plug into Molex connectors with 300 micron pitch~\cite{ref:molex45}.
 To improve durability and handling, the soldered wires are secured with a non-conductive epoxy, and then the bundle is lashed together using polyimide braiding.
 
 \begin{figure}[htbp]
@@ -177,32 +177,33 @@ The polyimide braiding used for lashing becomes brittle after 1900 \mrad, but th
 \label{sec:optical}
 
 The portcards play an important role in the readout chain in converting electrical signals from on-detector readout chips to optical signals for off-detector DTC boards.
-The portcard design and a photo of a prototype portcard are shown in \fig~\ref{fig:port_card}.
+% The portcard design and a photo of a prototype portcard are shown in \fig~\ref{fig:port_card}.
 Dedicated setups with the portcards reading out SCCs with short coaxial cables have been used to test the prototype portcard and validate the optical part of the readout chain.
-
-\begin{figure}[htbp]
-\centering
-\raisebox{-0.5\height}{\includegraphics[width=0.30\textwidth,origin=c]{../figures/port_card_design.png}}
-\qquad
-\raisebox{-0.5\height}{\includegraphics[width=0.30\textwidth,origin=c]{../figures/port_card_back.jpeg}}
-\caption{
-\label{fig:port_card}
-Portcard design (left) and prototype (right).
-The portcard has three lpGBT and three \vtrxp\space modules, which are used to convert high bandwidth electric signals to optical signals.
-}
-\end{figure}
-
-% Optical Link Measurements
-
-The optical links have been characterized by various measurements.
-In one measurement, the high-speed input to the lpGBT is compared to a 5-bit adjustable constant voltage by a comparator sampled with a phase interpolated clock.
+% The optical links have been characterized by various measurements.
+In one measurement of the optical links, the high-speed input to the lpGBT is compared to a 5-bit adjustable constant voltage by a comparator sampled with a phase interpolated clock.
 Transitions of the comparator are counted; within the eye the output should toggle, but above or below the eye, no transitions are expected.
 The data from this measurement are shown in \fig~\ref{fig:lpgbt_eye}.
 The high toggle count region is large, corresponding to a large eye diagram and a strong optical signal.
 
+% port card figure
+%
+% \begin{figure}[htbp]
+% \centering
+% \raisebox{-0.5\height}{\includegraphics[width=0.30\textwidth,origin=c]{../figures/port_card_design.png}}
+% \qquad
+% \raisebox{-0.5\height}{\includegraphics[width=0.30\textwidth,origin=c]{../figures/port_card_back.jpeg}}
+% \caption{
+% \label{fig:port_card}
+% Portcard design (left) and prototype (right).
+% The portcard has three lpGBT and three \vtrxp\space modules, which are used to convert high bandwidth electric signals to optical signals.
+% }
+% \end{figure}
+
+% Optical Link Measurements
+
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.8\textwidth,origin=c]{../figures/lpGBT_eye.pdf}
+\includegraphics[width=0.70\textwidth,origin=c]{../figures/lpGBT_eye.pdf}
 \caption{
 \label{fig:lpgbt_eye}
 Eye opening monitor from an lpGBT for the 2.56 Gbps optical down link with equalization parameters at default settings.
@@ -215,7 +216,7 @@ Regions with high toggle count correspond to the eye opening, while regions with
 
 % Electrical Link Measurements
 
-The electrical link receivers on the lpGBT are being studied.
+In addition, the electrical link receivers on the lpGBT are being studied.
 In one measurement, the signal source is a PRBS7 generator in the RD53 readout chip.
 This signal is sent over a commercial display port cable, an adapter board, and a Molex FPC cable (Ref.~\cite{ref:molex_cable}) to be received by an lpGBT.
 The signal is compared to an internal error checker on the lpGBT.
@@ -240,8 +241,8 @@ Points in green have zero observed errors and report the reciprocal of the numbe
 \section{Conclusion}
 \label{sec:conclusion}
 
-The data readout chain is an important part of the CMS Phase-2 pixel upgrade.
-Various system tests have been performed to characterize the electrical and optical links forming the readout chain.
+% The data readout chain is an important part of the CMS Phase-2 pixel upgrade.
+Various system tests have been performed to characterize the electrical and optical links forming the readout chain for the CMS Phase-2 pixel upgrade.
 Electrical links can provide stable connectivity at the required lengths, and crosstalk has a small effect on signal quality.
 Conversion from electrical to optical links is working well, and the optical links have good performance.
 These results form an important input to the final design, production, and testing of components for the pixel detector readout chain.
@@ -435,8 +436,8 @@ Proceedings on the Topical Workshop on Electronics for Particle Physics, TWEPP 2
 % \bibitem{ref:molex17}
 % \url{https://www.molex.com/molex/products/part-detail/ffc_fpc_connectors/5025981793}.
 
-\bibitem{ref:molex33}
-\url{https://www.molex.com/molex/products/part-detail/ffc_fpc_connectors/5025983393}.
+% \bibitem{ref:molex33}
+% \url{https://www.molex.com/molex/products/part-detail/ffc_fpc_connectors/5025983393}.
 
 \bibitem{ref:molex45}
 \url{https://www.molex.com/molex/products/part-detail/ffc_fpc_connectors/5025984593}.
