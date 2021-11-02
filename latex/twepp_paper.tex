@@ -8,6 +8,7 @@
 \usepackage{lineno}
 \usepackage{url}
 \usepackage{hyperref}
+\urlstyle{same}
 
 \newcommand{\vtrxp}{VTRx+}
 \newcommand{\mrad}{Mrad}
@@ -36,7 +37,8 @@ The development and the characterization of these components is presented along 
 
 \keywords{Front-end electronics for detector readout, optical detector readout concepts, radiation-hard electronics}
 
-% \arxivnumber{1234.56789} % only if you have one
+% https://arxiv.org/abs/2110.14021
+\arxivnumber{2110.14021} % only if you have one
 
 \collaboration[c]{on behalf of the CMS tracker collaboration}
 
@@ -57,10 +59,6 @@ The development and the characterization of these components is presented along 
 
 \section{Introduction}
 \label{sec:introduction}
-
-% The High-Luminosity LHC (HL-LHC)~\cite{ref:hllhc} will provide CMS experiment~\cite{ref:cms} with a peak instantaneous luminosity of $7.5 \times 10^{34} \mathrm{cm}^{-2} \mathrm{s}^{-1}$.
-% Compared to the LHC, the HL-LHC will have up to 200 proton-proton collisions (pileup) per event and will result in a higher radiation fluence.
-% To prepare for this data taking environment, the CMS Tracker will be fully replaced in the Phase-2 upgrade~\cite{ref:tdr,ref:orfanelli}.
 
 In preparation for the High-Luminosity LHC (HL-LHC)~\cite{ref:hllhc}, the CMS Tracker will be fully replaced in the Phase-2 upgrade~\cite{ref:cms,ref:tdr,ref:orfanelli}.
 The new inner tracker will have about two billion silicon pixels installed,
@@ -118,7 +116,6 @@ One end of a twisted pair electrical link (e-link).
 
 Prototype low-mass electrical links are developed and characterized with a series of measurements.
 The signal quality is assessed using eye diagrams, which overlay transitions between binary states from repeated measurements of the signal over a time interval.
-% The eye diagram amplitude and jitter are used to quantify the quality of the differential signal and identify any distortion.
 Bit error rate scans are used to characterize signal integrity across e-links.
 Cross talk effects from channels within an e-link bundle (internal) and from multiple bundles (external) are studied.
 
@@ -177,9 +174,7 @@ The polyimide braiding used for lashing becomes brittle after 1900 \mrad, but th
 \label{sec:optical}
 
 The portcards play an important role in the readout chain in converting electrical signals from on-detector readout chips to optical signals for off-detector DTC boards.
-% The portcard design and a photo of a prototype portcard are shown in \fig~\ref{fig:port_card}.
 Dedicated setups with the portcards reading out SCCs with short coaxial cables have been used to test the prototype portcard and validate the optical part of the readout chain.
-% The optical links have been characterized by various measurements.
 In one measurement of the optical links, the high-speed input to the lpGBT is compared to a 5-bit adjustable constant voltage by a comparator sampled with a phase interpolated clock.
 Transitions of the comparator are counted; within the eye the output should toggle, but above or below the eye, no transitions are expected.
 The data from this measurement are shown in \fig~\ref{fig:lpgbt_eye}.
@@ -241,7 +236,6 @@ Points in green have zero observed errors and report the reciprocal of the numbe
 \section{Conclusion}
 \label{sec:conclusion}
 
-% The data readout chain is an important part of the CMS Phase-2 pixel upgrade.
 Various system tests have been performed to characterize the electrical and optical links forming the readout chain for the CMS Phase-2 pixel upgrade.
 Electrical links can provide stable connectivity at the required lengths, and crosstalk has a small effect on signal quality.
 Conversion from electrical to optical links is working well, and the optical links have good performance.
@@ -401,23 +395,23 @@ Proceedings on the Topical Workshop on Electronics for Particle Physics, TWEPP 2
 % https://twiki.nevis.columbia.edu/twiki/pub/ATLAS/SliceTestboard/lpGBT.pdf
 
 \bibitem{ref:lpgbt_2}
-\url{https://twiki.nevis.columbia.edu/twiki/pub/ATLAS/SliceTestboard/lpGBT.pdf}.
+\url{https://twiki.nevis.columbia.edu/twiki/pub/ATLAS/SliceTestboard/lpGBT.pdf}
 
 % Araldite 2011 is from the Huntsman Corporation.
 % https://www.huntsman.com/products/araldite2000/araldite-2011
 
 \bibitem{ref:araldite}
-\url{https://www.huntsman.com/products/araldite2000/araldite-2011}.
+\url{https://www.huntsman.com/products/araldite2000/araldite-2011}
 
 % UR6060 is a product of Resinlab, and we purchase it from https://www.ellsworth.com/.
 % https://www.ellsworth.com/products/encapsulants/polyurethane/resinlab-ur6060-polyurethane-encapsulant-clear-50-ml-cartridge/
 
 \bibitem{ref:ur}
-\url{https://www.ellsworth.com/products/encapsulants/polyurethane/resinlab-ur6060-polyurethane-encapsulant-clear-50-ml-cartridge}.
+\url{https://www.ellsworth.com/products/encapsulants/polyurethane/resinlab-ur6060-polyurethane-encapsulant-clear-50-ml-cartridge}
 
 % FC7 mezzanine card
 \bibitem{ref:fc7}
-\url{https://espace.cern.ch/project-FC7/SitePages/Home.aspx}.
+\url{https://espace.cern.ch/project-FC7/SitePages/Home.aspx}
 
 % Molex connectors
 %
@@ -434,16 +428,16 @@ Proceedings on the Topical Workshop on Electronics for Particle Physics, TWEPP 2
 % https://www.molex.com/molex/products/part-detail/ffc_fpc_connectors/5025984593
 
 % \bibitem{ref:molex17}
-% \url{https://www.molex.com/molex/products/part-detail/ffc_fpc_connectors/5025981793}.
+% \url{https://www.molex.com/molex/products/part-detail/ffc_fpc_connectors/5025981793}
 
 % \bibitem{ref:molex33}
-% \url{https://www.molex.com/molex/products/part-detail/ffc_fpc_connectors/5025983393}.
+% \url{https://www.molex.com/molex/products/part-detail/ffc_fpc_connectors/5025983393}
 
 \bibitem{ref:molex45}
-\url{https://www.molex.com/molex/products/part-detail/ffc_fpc_connectors/5025984593}.
+\url{https://www.molex.com/molex/products/part-detail/ffc_fpc_connectors/5025984593}
 
 \bibitem{ref:molex_cable}
-\url{https://www.molex.com/molex/products/family/premoflex?parentKey=ffc_fpc_connectors}.
+\url{https://www.molex.com/molex/products/family/premoflex?parentKey=ffc_fpc_connectors}
 
 \end{thebibliography}
 \end{document}
