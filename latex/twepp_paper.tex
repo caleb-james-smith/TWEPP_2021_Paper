@@ -63,7 +63,6 @@ The development and the characterization of these components is presented along 
 In preparation for the High-Luminosity LHC (HL-LHC)~\cite{ref:hllhc}, the CMS Tracker will be fully replaced in the Phase-2 upgrade~\cite{ref:cms,ref:tdr,ref:orfanelli}.
 The new inner tracker will have about two billion silicon pixels installed,
 and hybrid pixel modules will process sensor data using a custom readout chip initially developed by the RD53 collaboration~\cite{ref:rd53}.
-% The detector will be built using hybrid pixel modules that process sensor data using a custom readout chip initially developed by the RD53 collaboration~\cite{ref:rd53}.
 Each readout chip on the detector needs a control link to receive trigger, clock, commands, and settings from off-detector electronics as well as data links to send pixel data to off-detector electronics.
 The high bandwidth control and data links are split into two stages: electrical links and optical links.
 System tests of these electrical and optical links are presented.
@@ -138,7 +137,7 @@ Good performance is seen for e-links up to 2.0 meters.
 \includegraphics[width=0.32\textwidth,origin=c]{../figures/BERT_TAP0_vs_Length-crop.pdf}
 \caption{
 \label{fig:tap0_vs_length}
-Measurement of signal amplitude (set by TAP0) for electrical links as a function of e-link length for 34 and 36 AWG e-links.
+Measurement of signal amplitudes (set by TAP0) on e-links for a fixed bit error rate.
 In the hardware setup (left), an FC7 mezzanine card is connected to an SCC through two commercial display port cables, an adapter board, and an e-link for control and readout of an RD53 chip.
 The measurements (right) show the TAP0 setting to achieve a bit error rate of $10^{-11}$ for e-links of different lengths and gauges.
 }
@@ -146,7 +145,7 @@ The measurements (right) show the TAP0 setting to achieve a bit error rate of $1
 
 % Crosstalk measurements
 
-Furthermore, an external crosstalk measurement was performed, and the results are shown in \fig~\ref{fig:external_crosstalk}.
+Furthermore, an external crosstalk measurement for e-links was performed, and the results are shown in \fig~\ref{fig:external_crosstalk}.
 To mitigate the effect of external crosstalk from a large aggressor amplitude, the victim amplitude set by TAP0 only requires a small increase.
 Thus, external crosstalk from the single aggressor e-link has a small effect on readout over the victim e-link.
 
@@ -158,23 +157,23 @@ Thus, external crosstalk from the single aggressor e-link has a small effect on 
 \raisebox{-0.5\height}{\includegraphics[height=2.2in,origin=c]{../figures/BERT_TAP0_Scan_External_Crosstalk-crop.pdf}}
 \caption{
 \label{fig:external_crosstalk}
-Measurement of the effect of external crosstalk on data transmission.
+Measurement of the effect of external crosstalk on data transmission across e-links.
 Two e-links (1.4 meters, 36 AWG) are twisted together (left), with a victim e-link connected between an FC7 mezzanine card and SCC to read from an RD53 chip, and an aggressor e-link connected to a KC705.
 The KC705 sends PRBS signals on four e-link channels on the aggressor at different amplitudes.
 }
 \end{figure}
 
-Radiation testing was performed to determine if e-links can maintain performance after receiving up to 1500 \mrad, which surpasses the total dose expected during their use in CMS.
+Radiation testing was performed to determine if e-links can maintain performance after receiving up to 1500 \mrad.
 Two different epoxies, Araldite 2011~(Ref.~\cite{ref:araldite}) and UR6060~(Ref.~\cite{ref:ur}), were used for e-links that underwent radiation testing.
-For doses up to 1300 \mrad, the Araldite 2011 epoxy showed significant darkening, while the UR6060 epoxy remained clear and transparent.
-The signal integrity on e-links remained good after radiation doses, and UR6060 is chosen as the epoxy used for e-link production.
+For doses up to 1300 \mrad, the Araldite 2011 epoxy showed significant darkening, while the UR6060 epoxy remained transparent.
+The signal integrity on e-links remained good after radiation doses.
 The polyimide braiding used for lashing becomes brittle after 1900 \mrad, but this should not effect the electrical readout.
 
 \section{Portcards with Optical Links}
 \label{sec:optical}
 
-The portcards play an important role in the readout chain in converting electrical signals from on-detector readout chips to optical signals for off-detector DTC boards.
-Dedicated setups with the portcards reading out SCCs with short coaxial cables have been used to test the prototype portcard and validate the optical part of the readout chain.
+The portcards convert electrical signals from on-detector readout chips to optical signals for off-detector DTC boards (see \fig~\ref{fig:readout}).
+Dedicated setups with the portcards reading out SCCs with short coaxial cables have been used to test the prototype portcards and validate the optical part of the readout chain.
 In one measurement of the optical links, the high-speed input to the lpGBT is compared to a 5-bit adjustable constant voltage by a comparator sampled with a phase interpolated clock.
 Transitions of the comparator are counted; within the eye the output should toggle, but above or below the eye, no transitions are expected.
 The data from this measurement are shown in \fig~\ref{fig:lpgbt_eye}.
@@ -198,14 +197,13 @@ The high toggle count region is large, corresponding to a large eye diagram and 
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.60\textwidth,origin=c]{../figures/lpGBT_eye.pdf}
+\includegraphics[width=0.70\textwidth,origin=c]{../figures/lpGBT_eye.pdf}
 \caption{
 \label{fig:lpgbt_eye}
 Eye opening monitor from an lpGBT for the 2.56 Gbps optical down link with equalization parameters at default settings.
-The vertical axis is a 5-bit encoded DAC value that corresponds to the constant voltage that the high-speed signal is compared with.
-The horizontal axis is a 6-bit encoded DAC value that governs the sampling phase used for this comparison.
-The color scale shows the number of transitions, which is the toggle count.
-Regions with high toggle count correspond to the eye opening, while regions with low toggle count are outside the eye opening.
+The vertical axis is a 5-bit encoded voltage threshold, and the horizontal axis is a 6-bit encoded sampling phase.
+The color scale shows the number of transitions (toggle count).
+Regions with high toggle count correspond to the eye opening.
 }
 \end{figure}
 
@@ -216,11 +214,10 @@ In one measurement, the signal source is a PRBS7 generator in the RD53 readout c
 This signal is sent over a commercial display port cable, an adapter board, and a Molex FPC cable (Ref.~\cite{ref:molex_cable}) to be received by an lpGBT.
 The signal is compared to an internal error checker on the lpGBT.
 The bit-error rate is measured as a function of clock sampling phase and equalization setting, and the results are provided in \fig~\ref{fig:lpgbt_bert}.
-The region with a bit error rate of $9.3 * 10^{-10}$ corresponds to zero errors for the total number of bits checked.
-The phases with zero errors are those where the eye diagram is open.
-The equalizer on the lpGBT reduces jitter and the bit error rate by processing the high-speed signal to minimize Inter-Symbol-Interferance~\cite{ref:lpgbt_2}.
-Changing the equalization setting has only a small effect on the timing.
-Low error rates on the lpGBT electrical link receivers are achieved by tuning the sampling phase.
+The region with a bit error rate of $9.3 * 10^{-10}$ corresponds to zero errors for the total number of bits checked ($1.07 * 10^{9}$).
+Low error rates on the lpGBT electrical link receivers are achieved by tuning the sampling phase, and changing the equalization setting has only a small effect on the timing.
+
+% The equalizer on the lpGBT reduces jitter and the bit error rate by processing the high-speed signal to minimize Inter-Symbol-Interferance~\cite{ref:lpgbt_2}.
 
 \begin{figure}[htbp]
 \centering
@@ -229,7 +226,7 @@ Low error rates on the lpGBT electrical link receivers are achieved by tuning th
 \label{fig:lpgbt_bert}
 Scan of bit-error rate vs. clock sampling phase and equalization setting for electrical port receivers on the lpGBT driven by the RD53 pixel readout chip.
 The number of bits checked at each setting is $1.07 * 10^{9}$.
-Points in green have zero observed errors and report the reciprocal of the number of bits checked.
+Points in green have zero observed errors and report $9.3 * 10^{-10}$, which is the reciprocal of the number of bits checked.
 }
 \end{figure}
 
@@ -394,8 +391,8 @@ Proceedings on the Topical Workshop on Electronics for Particle Physics, TWEPP 2
 % lpGBT documentation
 % https://twiki.nevis.columbia.edu/twiki/pub/ATLAS/SliceTestboard/lpGBT.pdf
 
-\bibitem{ref:lpgbt_2}
-\url{https://twiki.nevis.columbia.edu/twiki/pub/ATLAS/SliceTestboard/lpGBT.pdf}
+% \bibitem{ref:lpgbt_2}
+% \url{https://twiki.nevis.columbia.edu/twiki/pub/ATLAS/SliceTestboard/lpGBT.pdf}
 
 % Araldite 2011 is from the Huntsman Corporation.
 % https://www.huntsman.com/products/araldite2000/araldite-2011
