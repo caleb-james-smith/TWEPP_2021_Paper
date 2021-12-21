@@ -2,21 +2,25 @@
 \pdfoutput=1 % if your are submitting a pdflatex (i.e. if you have
              % images in pdf, png or jpg format)
 
-\usepackage{jinstpub} % for details on the use of the package, please
-                      % see the JINST-author-manual
-
+\usepackage{jinstpub} % for details on the use of this package, please see the JINST-author-manual
 \usepackage{lineno}
 \usepackage{url}
 \usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{xspace}
+
 \urlstyle{same}
 
 \newcommand{\vtrxp}{VTRx+}
 \newcommand{\mrad}{Mrad}
 \newcommand{\fig}{Figure}
+\newcommand{\mbps}{\ensuremath{\mathrm{Mb}/\mathrm{s}}\xspace}
+\newcommand{\gbps}{\ensuremath{\mathrm{Gb}/\mathrm{s}}\xspace}
+\newcommand{\red}{\textcolor{red}}
 
 \linenumbers
 
-\title{Development of a high bandwidth readout chain for the CMS Phase-2 pixel upgrade}
+\title{\red{Characterization} of a high bandwidth readout chain for the CMS Phase-2 pixel upgrade}
 
 %% %simple case: multiple authors, same institution
 \author{C. Smith}
@@ -27,9 +31,9 @@
 
 \abstract{
 The CMS collaboration is building a new inner tracking pixel detector for the High-Luminosity LHC.
-Each pixel readout chip will be controlled with a single serial input stream at 160 Mbps and will send out data via four current mode logic (CML) 1.28 Gbps outputs.
-The readout chips will be grouped in modules and connected with up to 1.6 m long low-mass electrical links to Low-Power Gigabit Transceivers (lpGBT) and Versatile Link PLUS Transceiver (\vtrxp) modules that send the data optically to off-detector electronics at 10 Gbps.
-The development and the characterization of these components is presented along with system tests of the readout chain.
+Each pixel readout chip will be controlled with a single serial input stream at 160 \red{\mbps} and will send out data via four current mode logic (CML) 1.28 \red{\gbps} outputs.
+The readout chips will be grouped in modules and connected with up to 1.6 m long low-mass electrical links to Low-Power Gigabit Transceivers (lpGBT) and Versatile Link PLUS Transceiver (\vtrxp) modules that send the data optically to off-detector electronics at 10 \red{\gbps}.
+\red{The characterization of these components and system tests of the readout chain are presented.}
 }
 
 % \keywords{Only keywords from JINST's keywords list please}
@@ -72,8 +76,8 @@ System tests of these electrical and optical links are presented.
 
 An overview of the data readout chain for the inner tracker is shown in \fig~\ref{fig:readout}.
 High bandwidth electrical and optical links are used to establish control and data links between pixel modules on the CMS detector and Data Trigger Control (DTC) boards in the counting room.
-Low-mass electronic links (e-links) up to 1.6 meters long provide 160 Mbps control links (downlinks) and 1.28 Gbps data links (uplinks) between pixel modules and portcards.
-Optical fibers connect portcards, which are mounted on the support structure inside the detector, to DTC boards in the counting room to establish 2.5 Gbps control links (downlinks) and 10 Gbps data links (uplinks).
+Low-mass electronic links (e-links) up to 1.6 meters long provide 160 \red{\mbps} control links (downlinks) and 1.28 \red{\gbps} data links (uplinks) between pixel modules and portcards.
+Optical fibers connect portcards, which are mounted on the support structure inside the detector, to DTC boards in the counting room to establish 2.5 \red{\gbps} control links (downlinks) and 10 \red{\gbps} data links (uplinks).
 The portcards each carry three Low-Power Gigabit Transceivers (lpGBT)~\cite{ref:lpgbt_1} and three Versatile Link PLUS Transceiver (\vtrxp) modules~\cite{ref:vtrxp}.
 The lpGBTs convert optical signals to electrical signals (and vice versa), and the \vtrxp\space modules establish optical links with the DTC boards.
 
@@ -200,7 +204,7 @@ The high toggle count region is large, corresponding to a large eye diagram and 
 \includegraphics[width=0.70\textwidth,origin=c]{../figures/lpGBT_eye.pdf}
 \caption{
 \label{fig:lpgbt_eye}
-Eye opening monitor from an lpGBT for the 2.56 Gbps optical down link with equalization parameters at default settings.
+Eye opening monitor from an lpGBT for the 2.56 \red{\gbps} optical down link with equalization parameters at default settings.
 The vertical axis is a 5-bit encoded voltage threshold, and the horizontal axis is a 6-bit encoded sampling phase.
 The color scale shows the number of transitions (toggle count).
 Regions with high toggle count correspond to the eye opening.
