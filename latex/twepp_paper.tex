@@ -19,6 +19,7 @@
 \newcommand{\fig}{Figure}
 \newcommand{\mbps}{\ensuremath{\mathrm{Mb}/\mathrm{s}}\xspace}
 \newcommand{\gbps}{\ensuremath{\mathrm{Gb}/\mathrm{s}}\xspace}
+\newcommand{\micron}{\ensuremath{\upmu\mathrm{m}}\xspace}
 \newcommand{\red}{\textcolor{red}}
 
 \linenumbers
@@ -84,7 +85,7 @@ High bandwidth electrical and optical links are used to establish control and da
 Low-mass electronic links (e-links) up to 1.6~meters long provide 160~\red{\mbps} control links (downlinks) and 1.28~\red{\gbps} data links (uplinks) between pixel modules and portcards.
 Optical fibers connect portcards, which are mounted on the support structure inside the detector, to DTC boards in the counting room to establish 2.5~\red{\gbps} control links (downlinks) and 10~\red{\gbps} data links (uplinks).
 The portcards each carry three Low-Power Gigabit Transceivers (lpGBT)~\cite{ref:lpgbt_1} and three Versatile Link PLUS Transceiver (\vtrxp) modules~\cite{ref:vtrxp}.
-The lpGBTs convert optical signals to electrical signals (and vice versa), and the \vtrxp\space modules establish optical links with the DTC boards.
+\red{The lpGBTs communicate with the pixel modules via electrical links}, and the \vtrxp\space modules establish optical links with the DTC boards.
 
 \begin{figure}[htbp]
 \centering
@@ -105,8 +106,8 @@ System readout architecture for the inner tracker~\cite{ref:orfanelli}. Pixel mo
 The electrical links (e-links) are created using low mass, small diameter twisted pair cables.
 One end of a twisted pair electrical link is shown in \fig~\ref{fig:elink}.
 E-link bundles are made to connect to modules and provide each module with one control link twisted pair and multiple data link twisted pairs.
-Each twisted pair is produced using two 36 American Wire Gauge (AWG) copper core (127~microns in diameter) wires surrounded by polyimide insulation (45~microns thick) that are twisted together with 4 twists per inch.
-The pairs are soldered to small, 20~\red{microns} thick PCBs that can plug into Molex connectors with 300~\red{microns} pitch~\cite{ref:molex45}.
+Each twisted pair is produced using two 36 American Wire Gauge (AWG) copper core (127~\red{\micron} in diameter) wires surrounded by polyimide insulation (45~\red{\micron} thick) that are twisted together with 4 twists per inch.
+The pairs are soldered to small, 20~\red{\micron} thick PCBs that can plug into Molex connectors with 300~\red{\micron} pitch~\cite{ref:molex45}.
 To improve durability and handling, the soldered wires are secured with a non-conductive epoxy, and then the bundle is lashed together using polyimide braiding.
 
 \begin{figure}[htbp]
