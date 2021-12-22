@@ -34,8 +34,8 @@
 
 \abstract{
 The CMS collaboration is building a new inner tracking pixel detector for the High-Luminosity LHC.
-Each pixel readout chip will be controlled with a single serial input stream at 160 \red{\mbps} and will send out data via four current mode logic (CML) 1.28 \red{\gbps} outputs.
-The readout chips will be grouped in modules and connected with up to 1.6 m long low-mass electrical links to Low-Power Gigabit Transceivers (lpGBT) and Versatile Link PLUS Transceiver (\vtrxp) modules that send the data optically to off-detector electronics at 10 \red{\gbps}.
+Each pixel readout chip will be controlled with a single serial input stream at 160~\red{\mbps} and will send out data via four current mode logic (CML) 1.28~\red{\gbps} outputs.
+The readout chips will be grouped in modules and connected with up to 1.6~\red{meters} long low-mass electrical links to Low-Power Gigabit Transceivers (lpGBT) and Versatile Link PLUS Transceiver (\vtrxp) modules that send the data optically to off-detector electronics at 10~\red{\gbps}.
 \red{The characterization of these components and system tests of the readout chain are presented.}
 }
 
@@ -81,8 +81,8 @@ System tests of these electrical and optical links are presented.
 
 An overview of the data readout chain for the inner tracker is shown in \fig~\ref{fig:readout}.
 High bandwidth electrical and optical links are used to establish control and data links between pixel modules on the CMS detector and Data Trigger Control (DTC) boards in the counting room.
-Low-mass electronic links (e-links) up to 1.6 meters long provide 160 \red{\mbps} control links (downlinks) and 1.28 \red{\gbps} data links (uplinks) between pixel modules and portcards.
-Optical fibers connect portcards, which are mounted on the support structure inside the detector, to DTC boards in the counting room to establish 2.5 \red{\gbps} control links (downlinks) and 10 \red{\gbps} data links (uplinks).
+Low-mass electronic links (e-links) up to 1.6~meters long provide 160~\red{\mbps} control links (downlinks) and 1.28~\red{\gbps} data links (uplinks) between pixel modules and portcards.
+Optical fibers connect portcards, which are mounted on the support structure inside the detector, to DTC boards in the counting room to establish 2.5~\red{\gbps} control links (downlinks) and 10~\red{\gbps} data links (uplinks).
 The portcards each carry three Low-Power Gigabit Transceivers (lpGBT)~\cite{ref:lpgbt_1} and three Versatile Link PLUS Transceiver (\vtrxp) modules~\cite{ref:vtrxp}.
 The lpGBTs convert optical signals to electrical signals (and vice versa), and the \vtrxp\space modules establish optical links with the DTC boards.
 
@@ -105,8 +105,8 @@ System readout architecture for the inner tracker~\cite{ref:orfanelli}. Pixel mo
 The electrical links (e-links) are created using low mass, small diameter twisted pair cables.
 One end of a twisted pair electrical link is shown in \fig~\ref{fig:elink}.
 E-link bundles are made to connect to modules and provide each module with one control link twisted pair and multiple data link twisted pairs.
-Each twisted pair is produced using two 36 American Wire Gauge (AWG) copper core (127 microns in diameter) wires surrounded by polyimide insulation (45 microns thick) that are twisted together with 4 twists per inch.
-The pairs are soldered to small, 20 micron thick PCBs that can plug into Molex connectors with 300 micron pitch~\cite{ref:molex45}.
+Each twisted pair is produced using two 36 American Wire Gauge (AWG) copper core (127~microns in diameter) wires surrounded by polyimide insulation (45~microns thick) that are twisted together with 4 twists per inch.
+The pairs are soldered to small, 20~\red{microns} thick PCBs that can plug into Molex connectors with 300~\red{microns} pitch~\cite{ref:molex45}.
 To improve durability and handling, the soldered wires are secured with a non-conductive epoxy, and then the bundle is lashed together using polyimide braiding.
 
 \begin{figure}[htbp]
@@ -132,12 +132,12 @@ Cross talk effects from channels within an e-link bundle (internal) and from mul
 % ==================
 
 In one system test of the e-links, an RD53 chip on a Single Chip Card (SCC) is read out over e-links using an FC7 mezzanine card~\cite{ref:fc7}, as shown in \fig~\ref{fig:tap0_vs_length}.
-E-links of two gauges (34 and 36 AWG) and different lengths (from 0.35 to 2.0 meters) are used in the readout chain.
+E-links of two gauges (34 and 36~AWG) and different lengths (from 0.35 to 2.0~meters) are used in the readout chain.
 Bit error rates are determined using a pseudorandom binary sequence (PRBS) that is sent from the RD53 chip to the FC7 mezzanine card.
 The amplitude of the PRBS signal is varied using the ``TAP0'' pre-emphasis digital-to-analog converter (DAC) setting, which controls the amplitude of the signal output by the current mode logic (CML) driver on the RD53 chip.
 For this test, the amplitude is increased until the bit error rate of $10^{-11}$ is reached.
 Longer e-links require a larger signal amplitude to maintain a given bit error rate.
-Good performance is seen for e-links up to 2.0 meters.
+Good performance is seen for e-links up to 2.0~meters.
 
 \begin{figure}[htbp]
 \centering
@@ -167,7 +167,7 @@ Thus, external crosstalk from the single aggressor e-link has a small effect on 
 \caption{
 \label{fig:external_crosstalk}
 Measurement of the effect of external crosstalk on data transmission across e-links.
-Two e-links (1.4 meters, 36 AWG) are twisted together (left), with a victim e-link connected between an FC7 mezzanine card and SCC to read from an RD53 chip, and an aggressor e-link connected to a KC705.
+Two e-links (1.4~meters, 36~AWG) are twisted together (left), with a victim e-link connected between an FC7 mezzanine card and SCC to read from an RD53 chip, and an aggressor e-link connected to a KC705.
 The KC705 sends PRBS signals on four e-link channels on the aggressor at different amplitudes.
 }
 \end{figure}
@@ -209,7 +209,7 @@ The high toggle count region is large, corresponding to a large eye diagram and 
 \includegraphics[width=0.70\textwidth,origin=c]{../figures/lpGBT_eye.pdf}
 \caption{
 \label{fig:lpgbt_eye}
-Eye opening monitor from an lpGBT for the 2.56 \red{\gbps} optical down link with equalization parameters at default settings.
+Eye opening monitor from an lpGBT for the 2.56~\red{\gbps} optical down link with equalization parameters at default settings.
 The vertical axis is a 5-bit encoded voltage threshold, and the horizontal axis is a 6-bit encoded sampling phase.
 The color scale shows the number of transitions (toggle count).
 Regions with high toggle count correspond to the eye opening.
