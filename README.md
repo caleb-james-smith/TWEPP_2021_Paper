@@ -8,9 +8,9 @@ TWEPP 2021 Links
 - [Poster contribution](https://indico.cern.ch/event/1019078/contributions/4444260/)
 
 
-To compile Latex file on macOS:
+To compile macOS (runs pdflatex and bibtex commands using Makefile):
 ```
 cd latex
-pdflatex twepp_paper.tex
+make
 ```
 
