@@ -134,7 +134,7 @@ Cross talk effects from channels within an e-link bundle (internal) and from mul
 
 In one system test of the e-links, an RD53 chip on a Single Chip Card (SCC) is read out over e-links using an FC7 mezzanine card~\cite{ref:fc7}, as shown in \fig~\ref{fig:tap0_vs_length}.
 E-links of two gauges (34 and 36~AWG) and different lengths (from 0.35 to 2.0~meters) are used in the readout chain.
-Bit error rates are determined using a pseudorandom binary sequence (PRBS) that is sent from the RD53 chip to the FC7 mezzanine card.
+Bit error rates are determined using a pseudorandom binary sequence (PRBS) that is sent \red{at 1.28~\gbps} from the RD53 chip to the FC7 mezzanine card.
 The amplitude of the PRBS signal is varied using the ``TAP0'' pre-emphasis digital-to-analog converter (DAC) setting, which controls the amplitude of the signal output by the current mode logic (CML) driver on the RD53 chip.
 For this test, the amplitude is increased until the bit error rate of $10^{-11}$ is reached.
 Longer e-links require a larger signal amplitude to maintain a given bit error rate.
