@@ -8,7 +8,7 @@ TWEPP 2021 Links
 - [Poster contribution](https://indico.cern.ch/event/1019078/contributions/4444260/)
 - [JINST instruction for authors](https://jinst.sissa.it/jinst/help/helpLoader.jsp?pgType=author)
 
-To compile macOS (runs pdflatex and bibtex commands using Makefile):
+To compile on macOS (runs pdflatex and bibtex commands using Makefile):
 ```
 cd latex
 make
