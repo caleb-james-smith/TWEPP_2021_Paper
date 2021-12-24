@@ -126,19 +126,23 @@ To improve durability and handling, the soldered wires are secured with a non-co
 Prototype low-mass electrical links \red{are characterized using} a series of measurements.
 The signal quality is assessed using eye diagrams, which overlay transitions between binary states from repeated measurements of the signal over a time interval.
 Bit error rate scans are used to characterize signal integrity across e-links.
+\red{To reliably readout pixel detector data, the e-links need to support error rates of less than $10^{-13}$ for signals at 1.28~\gbps.}
 Cross talk effects from channels within an e-link bundle (internal) and from multiple bundles (external) are studied.
 
 % ==================
 % E-link performance
 % ==================
 
-In one system test of the e-links, an RD53 chip on a Single Chip Card (SCC) is read out over e-links using an FC7 mezzanine card~\cite{ref:fc7}, as shown in \fig~\ref{fig:tap0_vs_length}.
+\red{To test error rates over e-links}, an RD53 chip on a Single Chip Card (SCC) is read out over e-links using an FC7 mezzanine card~\cite{ref:fc7}, as shown in \fig~\ref{fig:tap0_vs_length}.
 E-links of two gauges (34 and 36~AWG) and different lengths (from 0.35 to 2.0~meters) are used in the readout chain.
 Bit error rates are determined using a pseudorandom binary sequence (PRBS) that is sent \red{at 1.28~\gbps} from the RD53 chip to the FC7 mezzanine card.
-The amplitude of the PRBS signal is varied using the ``TAP0'' pre-emphasis digital-to-analog converter (DAC) setting, which controls the amplitude of the signal output by the current mode logic (CML) driver on the RD53 chip.
+The amplitude of the PRBS signal is varied using the \red{10-bit ``TAP0'' pre-emphasis setting}, which controls the amplitude of the signal output by the current mode logic (CML) driver on the RD53 chip.
 For this test, the amplitude is increased until the bit error rate of $10^{-11}$ is reached.
 Longer e-links require a larger signal amplitude to maintain a given bit error rate.
 Good performance is seen for e-links up to 2.0~meters.
+\red{A different hardware setup with a KC705 has been used to demonstrate bit error rates of less than $10^{-13}$, but longer tests using the RD53 chip are needed to reach this same target.}
+% Longer tests of e-links in a different hardware system have demonstrated bit error rates of less than $10^{-13}$.
+% However, longer tests are required to demonstrate the target bit error rate of $10^{-13}$ and determine the necessary TAP0 setting.
 
 \begin{figure}[htbp]
 \centering
@@ -226,7 +230,6 @@ The signal is compared to an internal error checker on the lpGBT.
 The \red{bit error} rate is measured as a function of clock sampling phase and equalization setting, and the results are provided in \fig~\ref{fig:lpgbt_bert}.
 The region with a bit error rate of $9.3 * 10^{-10}$ corresponds to zero errors for the total number of bits checked ($1.07 * 10^{9}$).
 Low error rates on the lpGBT electrical link receivers are achieved by tuning the sampling phase, and changing the equalization setting has only a small effect on the timing.
-
 % The equalizer on the lpGBT reduces jitter and the bit error rate by processing the high-speed signal to minimize Inter-Symbol-Interferance~\cite{ref:lpgbt_2}.
 
 \begin{figure}[htbp]
@@ -243,8 +246,11 @@ Points in green have zero observed errors and report $9.3 * 10^{-10}$, which is 
 \section{Conclusion}
 \label{sec:conclusion}
 
-Various system tests have been performed to characterize the electrical and optical links forming the readout chain for the CMS Phase-2 pixel upgrade.
-Electrical links can provide stable connectivity at the required lengths, and crosstalk has a small effect on signal quality.
+Various system tests have been performed \red{for the new pixel readout chain.}
+% to characterize the electrical and optical links forming the readout chain for the CMS Phase-2 pixel upgrade.
+Electrical links provide stable connectivity at the required lengths, and crosstalk has a small effect on signal quality.
+\red{Low bit error rates ($10^{-11}$) over e-links are observed, but longer tests with the RD53 chip are needed to achieve the target error rate ($10^{-13}$).}
+% \red{Low bit error rates ($10^{-11}$) over e-links are observed for 1.28~\gbps signals, but longer tests with the RD53 chip are required to demonstrate performance at the required error rate ($10^{-13}$).}
 Conversion from electrical to optical links is working well, and the optical links have good performance.
 These results form an important input to the final design, production, and testing of components for the pixel detector readout chain.
 
