@@ -23,7 +23,11 @@
 \newcommand{\red}{\textcolor{red}}
 \newcommand{\black}{\textcolor{black}}
 
+% Line numbers
 % \linenumbers
+
+% Turn off table of contents
+\notoc
 
 \title{\black{Characterization} of a high bandwidth readout chain for the CMS Phase-2 pixel upgrade}
 
@@ -58,9 +62,13 @@ The readout chips will be grouped in modules and connected with up to 1.6~\black
 
 \begin{document}
 
+% Title page
+
 \maketitle
 
 \flushbottom
+
+\newpage
 
 % Comment on abbreviations
 % We suggest not to abbreviate: ``section'', ``appendix'', ``figure''
@@ -189,10 +197,12 @@ The polyimide braiding used for lashing becomes brittle after 1900~\mrad, but th
 
 The portcards convert electrical signals from on-detector readout chips to optical signals for off-detector DTC boards (see \fig~\ref{fig:readout}).
 Dedicated setups with the portcards reading out SCCs with short coaxial cables have been used to test the prototype portcards and validate the optical part of the readout chain.
-In one measurement of the optical links, the high-speed input to the lpGBT is compared to a 5-bit adjustable constant voltage by a comparator sampled with a phase interpolated clock.
-Transitions of the comparator are counted; within the eye the output should toggle, but above or below the eye, no transitions are expected.
-The data from this measurement are shown in \fig~\ref{fig:lpgbt_eye}.
-The high toggle count region is large, corresponding to a large eye diagram and a strong optical signal.
+A measurement of the optical links using the lpGBT eye opening monitor~\cite{ref:lpgbt_1} was performed in which the high-speed input to the lpGBT is compared to an adjustable threshold voltage by a comparator sampled with a phase interpolated clock.
+Transitions of the comparator are counted, giving a ``toggle count.''
+Within the eye, a large number of transitions are expected, and outside of the eye, approximately half as many transitions are expected.
+Data from this measurement are shown in \fig~\ref{fig:lpgbt_eye}.
+The vertical axis is scaled such that regions with no transitions are not shown.
+The high toggle count region is large and corresponds to a large eye diagram and a strong optical signal.
 
 % port card figure
 %
@@ -216,9 +226,10 @@ The high toggle count region is large, corresponding to a large eye diagram and 
 \caption{
 \label{fig:lpgbt_eye}
 Eye opening monitor from an lpGBT for the 2.56~\black{\gbps} optical down link with equalization parameters at default settings.
-The vertical axis is a 5-bit encoded voltage threshold, and the horizontal axis is a 6-bit encoded sampling phase.
+The vertical axis is an encoded voltage threshold, and the horizontal axis is an encoded sampling phase.
 The color scale shows the number of transitions (toggle count).
-Regions with high toggle count correspond to the eye opening.
+The plot is scaled vertically to show the eye opening region, and the regions without transitions are not shown.
+The regions with high toggle count correspond to the eye opening.
 }
 \end{figure}
 
@@ -255,9 +266,9 @@ Electrical links provide stable connectivity at the required lengths, and crosst
 Conversion from electrical to optical links is working well, and the optical links have good performance.
 These results form an important input to the final design, production, and testing of components for the pixel detector readout chain.
 
-% \acknowledgments
-%
-% The author would like to thank the National Science Foundation for funding this research.
+\acknowledgments
+
+The authors would like to thank the National Science Foundation for funding this research.
 
 % We suggest to always provide author, title and journal data:
 % in short all the informations that clearly identify a document.
