@@ -34,6 +34,7 @@ Check that Latex compiles and outputs the expected PDF:
 ```
 make clean
 make
+show twepp_paper.pdf
 ```
 
 Create tarball:
@@ -43,17 +44,18 @@ mv jinst-v1.tar.gz ..
 cd ..
 ```
 
-Check tarball:
+Check that tarball works:
 ```
 mkdir tmp
 cp jinst-v1.tar.gz tmp
 cd tmp
 tar -zxvf jinst-v1.tar.gz
-make
 ```
 
-Check PDF:
+Compile and check pdf:
 ```
+make clean
+make
 show twepp_paper.pdf
 ```
 
