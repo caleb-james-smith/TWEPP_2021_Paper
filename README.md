@@ -14,9 +14,10 @@ cd latex
 make
 ```
 
-## Instructions to make tarball to upload to JINST
+## Instructions to make tarball
 
-First, create directories to use for the tarball.
+Instructions for creating a tarball to upload the paper (e.g. for JINST, arXiv, ...).
+First, create directories to use for the tarball and copy the necessary files.
 In this example, we use the name "jinst-v1".
 ```
 mkdir -p tarballs
