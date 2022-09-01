@@ -14,3 +14,50 @@ cd latex
 make
 ```
 
+## Instructions to make tarball to upload to JINST
+
+First, create directories to use for the tarball.
+In this example, we use the name "jinst-v1".
+```
+mkdir -p tarballs
+cd tarballs
+mkdir jinst-v1
+cd jinst-v1
+rsync -az ../../latex/ .
+rsync -az ../../figures .
+```
+
+Edit this new copy of twepp_paper.tex: Change "../figures" to "figures" throughout file.
+
+Check that Latex compiles and outputs the expected PDF:
+```
+make clean
+make
+```
+
+Create tarball:
+```
+tar -czvf jinst-v1.tar.gz *
+mv jinst-v1.tar.gz ..
+cd ..
+```
+
+Check tarball:
+```
+mkdir tmp
+cp jinst-v1.tar.gz tmp
+cd tmp
+tar -zxvf jinst-v1.tar.gz
+make
+```
+
+Check PDF:
+```
+show twepp_paper.pdf
+```
+
+Remove directory:
+```
+cd ..
+rm -r tmp
+```
